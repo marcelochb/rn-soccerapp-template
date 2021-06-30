@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Image } from 'react-native';
 import { PageWrapper, Buttons, Texts } from '@soccerapp/ui';
 import { ModelOfTemplateOnboard } from '../Models';
-import { ModelOfTheme } from '@src/theme';
+import { ModelOfTheme } from '@soccerapp/theme';
 
 
 export const TemplateOnboard: React.FC<ModelOfTemplateOnboard> = ({

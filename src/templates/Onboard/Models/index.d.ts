@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import { ModelOfTheme } from "@src/theme";
+import { ModelOfTheme } from "@soccerapp/theme";
 import { ImageSourcePropType, GestureResponderEvent } from "react-native";
 
 export type ModelOfTemplateOnboard = {
