@@ -16,16 +16,20 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@soccerapp/theme": "git+https://github.com/marcelochb/rn-soccerapp-theme",
+    "@soccerapp/ui": "git+https://github.com/marcelochb/rn-soccerapp-ui",
     "react": "16.13.1",
     "react-native": "0.63.3",
-    "@soccerapp/ui": "git+https://github.com/marcelochb/rn-soccerapp-ui",
-    "@soccerapp/theme": "git+https://github.com/marcelochb/rn-soccerapp-theme"
+    "react-native-svg": "^12.1.1",
+    "react-native-svg-transformer": "^0.14.3"
   },
   "peerDependencies": {
+    "@soccerapp/theme": "git+https://github.com/marcelochb/rn-soccerapp-theme",
+    "@soccerapp/ui": "git+https://github.com/marcelochb/rn-soccerapp-ui",
     "react": "16.13.1",
     "react-native": "0.63.3",
-    "@soccerapp/ui": "git+https://github.com/marcelochb/rn-soccerapp-ui",
-    "@soccerapp/theme": "git+https://github.com/marcelochb/rn-soccerapp-theme"
+    "react-native-svg": "^12.1.1",
+    "react-native-svg-transformer": "^0.14.3"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
