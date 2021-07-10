@@ -1,6 +1,7 @@
-import { ImageSourcePropType, NativeSyntheticEvent, TextInputSubmitEditingEventData, GestureResponderEvent } from "react-native";
-import { ModelOfTheme } from "@soccerapp/theme";
 import { Component } from "react";
+import { ImageSourcePropType, NativeSyntheticEvent, 
+  TextInputSubmitEditingEventData, GestureResponderEvent } from "react-native";
+import { ModelOfTheme } from "@soccerapp/theme";
 
 export type ModelOfTemplateSignIn = {
   theme: ModelOfTheme;
