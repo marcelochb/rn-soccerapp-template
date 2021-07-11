@@ -4,7 +4,7 @@ import { View, Image, ScrollView, Animated } from 'react-native';
 import { ModelOfTemplateSignIn } from '../Models';
 import { useTemplateSignInController } from '../Controller';
 
-import { Texts, Input, Buttons, PopupNotification, SignUpPopup } from '@soccerapp/ui';
+import { Texts, Input, Buttons, Popups, SignUpPopup } from '@soccerapp/ui';
 
 import { styles } from './styles';
 
@@ -98,7 +98,7 @@ export const TemplateSignIn: React.FC<ModelOfTemplateSignIn> = ({
         tertiaryButtonIcon={signUpPopupTertiaryButtonIcon}
         tertiaryButtonOnPress={signUpPopupTertiaryButtonOnPress}
       />
-      <PopupNotification
+      <Popups.Notification
         theme={theme}
         onHandler={notificationOnHandler}
         text={notificationText}
