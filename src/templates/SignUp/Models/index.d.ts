@@ -1,7 +1,6 @@
-import { ModelOfTheme } from "@soccerapp/theme";
-import { GestureResponderEvent } from "react-native";
-import { ModelOfPopupNotificationType } from "@soccerapp/ui";
 import { Component } from "react";
+import { GestureResponderEvent } from "react-native";
+import { ModelOfTheme } from "@soccerapp/theme";
 
 export type ModelOfTemplateSignUp = {
   theme: ModelOfTheme;
@@ -17,7 +16,7 @@ export type ModelOfTemplateSignUp = {
   confirmpasswordError?: string | boolean | undefined;
   notificationOnHandler: () => void;
   notificationText: string;
-  notificationType: ModelOfPopupNotificationType;
+  notificationType: 'Sucesso' | 'Atenção' | 'Erro';
   notificationVisible: boolean;
   onSubmit: (((event: GestureResponderEvent) => void) & ((e: GestureResponderEvent) => void)) | undefined;
   isLoadingSubmit?: boolean | undefined;
