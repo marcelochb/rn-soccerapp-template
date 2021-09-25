@@ -1169,7 +1169,7 @@
 
 "@soccerapp/ui@git+https://github.com/marcelochb/rn-soccerapp-ui":
   version "0.0.1"
-  resolved "git+https://github.com/marcelochb/rn-soccerapp-ui#676e21d2e4352ed92b9ffa739997d21861d9e06d"
+  resolved "git+https://github.com/marcelochb/rn-soccerapp-ui#fd21417d231d47c0975a2c3217a30ec92dcfcbff"
   dependencies:
     "@soccerapp/theme" "git+https://github.com/marcelochb/rn-soccerapp-theme"
     react "16.13.1"
