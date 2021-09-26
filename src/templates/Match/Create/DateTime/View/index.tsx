@@ -1,15 +1,15 @@
 import { Buttons, CheckBox, Input, PageWrapper, Texts } from '@soccerapp/ui';
 import React from 'react';
 import { View } from 'react-native';
-import { ModelOfMatchCreateDateTimeTemplate } from '../Models';
+import { ModelOfTemplateMatchCreateDateTime } from '../Models';
 import { styles } from './styles';
 import { Avatar } from '@soccerapp/ui';
 import iconDate from '@src/assets/Icons/iconDate.svg';
 import iconHour from '@src/assets/Icons/iconHour.svg';
 import iconAddAlert from '@src/assets/Icons/iconAddAlert.svg';
 
-export const MatchCreateDateTimeTemplate
-  : React.FC<ModelOfMatchCreateDateTimeTemplate> = ({
+export const TemplateMatchCreateDateTime
+  : React.FC<ModelOfTemplateMatchCreateDateTime> = ({
     theme,
     sourceCrest,
     teamName,

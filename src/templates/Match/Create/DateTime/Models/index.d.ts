@@ -2,7 +2,7 @@ import { ModelOfTheme } from "@soccerapp/theme";
 import { Component } from "react";
 import { GestureResponderEvent } from "react-native";
 
-export type ModelOfMatchCreateDateTimeTemplate = {
+export type ModelOfTemplateMatchCreateDateTime = {
   theme: ModelOfTheme;
   sourceCrest?: string | undefined;
   teamName: string;
@@ -29,4 +29,4 @@ export type ModelOfMatchCreateDateTimeTemplate = {
   onCancel: ((() => void) & (() => void)) | undefined;
 }
 
-export class MatchCreateDateTimeTemplate extends Component<ModelOfMatchCreateDateTimeTemplate> {}
+export class TemplateMatchCreateDateTime extends Component<ModelOfTemplateMatchCreateDateTime> {}
