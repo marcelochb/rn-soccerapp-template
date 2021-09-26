@@ -1,4 +1,5 @@
 import { ModelOfTheme } from "@soccerapp/theme";
+import { Component } from "react";
 import { GestureResponderEvent } from "react-native";
 
 export type ModelOfMatchCreateDateTimeTemplate = {
@@ -13,17 +14,19 @@ export type ModelOfMatchCreateDateTimeTemplate = {
   hourChangeText: ((text: string) => void) | undefined;
   hourError: string | boolean | undefined;
   firstSquadIsChecked: boolean;
-  firstSquadOnCheck: () => void;
+  firstSquadOnClick: () => void;
   secondSquadIsChecked: boolean;
-  secondSquadOnCheck: () => void;
+  secondSquadOnClick: () => void;
   confirmAttendanceError: boolean;
   confirmAttendanceDaysBeforeValue: string;
   confirmAttendanceDaysBeforeChangeText: ((text: string) => void) | undefined;
   confirmAttendanceDaysBeforeError: string | boolean | undefined;
   confirmAttendanceIsChecked: boolean;
-  confirmAttendanceOnCheck: () => void;
+  confirmAttendanceOnClick: () => void;
   notConfirmAttendanceIsChecked: boolean;
-  notConfirmAttendanceOnCheck: () => void;
+  notConfirmAttendanceOnClick: () => void;
   onSubmit: (((event: GestureResponderEvent) => void) & ((e: GestureResponderEvent) => void)) | undefined;
-
+  onCancel: ((() => void) & (() => void)) | undefined;
 }
+
+export class MatchCreateDateTimeTemplate extends Component<ModelOfMatchCreateDateTimeTemplate> {}

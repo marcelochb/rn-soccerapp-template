@@ -12,6 +12,28 @@ export const MatchCreateDateTimeTemplate
   : React.FC<ModelOfMatchCreateDateTimeTemplate> = ({
     theme,
     sourceCrest,
+    teamName,
+    teamResponsable,
+    dateValue,
+    dateChangeText,
+    dateError,
+    hourValue,
+    hourChangeText,
+    hourError,
+    firstSquadIsChecked,
+    firstSquadOnClick,
+    secondSquadIsChecked,
+    secondSquadOnClick,
+    confirmAttendanceError,
+    confirmAttendanceDaysBeforeValue,
+    confirmAttendanceDaysBeforeChangeText,
+    confirmAttendanceDaysBeforeError,
+    confirmAttendanceIsChecked,
+    confirmAttendanceOnClick,
+    notConfirmAttendanceIsChecked,
+    notConfirmAttendanceOnClick,
+    onSubmit,
+    onCancel,
   }) => {
     return (
       <PageWrapper theme={theme} isStatusBarLight isScrollForm>
@@ -20,8 +42,8 @@ export const MatchCreateDateTimeTemplate
             <Avatar theme={theme} source={sourceCrest} small />
           </View>
           <View style={styles(theme).padding}>
-            <Texts.Title theme={theme} small>{getController.team.name}</Texts.Title>
-            <Texts.Body theme={theme} style={styles(theme).name}>{`${getController.team.responsable} - ${getController.team.phone}`}</Texts.Body>
+            <Texts.Title theme={theme} small>{teamName}</Texts.Title>
+            <Texts.Body theme={theme} style={styles(theme).name}>{teamResponsable}</Texts.Body>
           </View>
         </View>
         <View style={[styles(theme).viewRow, styles(theme).marginBottom]}>
@@ -30,10 +52,10 @@ export const MatchCreateDateTimeTemplate
           >
             <Input theme={theme} IconSVG={iconDate}
               label='Data'
-              value={getController.matchDate}
-              onChangeText={handleController.onDateChange}
+              value={dateValue}
+              onChangeText={dateChangeText}
               maxLength={10}
-              error={getController.touched.matchDate && getController.errors.matchDate}
+              error={dateError}
             />
           </View>
           <View
@@ -43,9 +65,9 @@ export const MatchCreateDateTimeTemplate
               label='Hora'
               keyboardType='numeric'
               maxLength={5}
-              value={getController.matchHour}
-              onChangeText={handleController.onHourChange}
-              error={getController.touched.matchHour && getController.errors.matchHour}
+              value={hourValue}
+              onChangeText={hourChangeText}
+              error={hourError}
             />
           </View>
         </View>
@@ -54,8 +76,8 @@ export const MatchCreateDateTimeTemplate
           <CheckBox
             theme={theme}
             label='Primeiro quadro'
-            isChecked={getController.squad.includes('first')}
-            onClick={() => handleController.toggleSquad('first')}
+            isChecked={firstSquadIsChecked}
+            onClick={firstSquadOnClick}
             isRadioButton
           />
           <CheckBox
@@ -63,50 +85,50 @@ export const MatchCreateDateTimeTemplate
             isRadioButton
             label='Segundo quadro'
             style={styles(theme).marginLeft}
-            isChecked={getController.squad.includes('second')}
-            onClick={() => handleController.toggleSquad('second')}
+            isChecked={secondSquadIsChecked}
+            onClick={secondSquadOnClick}
           />
         </View>
         <Texts.Title theme={theme} small style={styles(theme).marginTop}>Confirmar presença</Texts.Title>
-        <View style={[getController.confirmAttendanceError ?
+        <View style={[confirmAttendanceError ?
           styles(theme).attendanceError : {}]}>
           <Input theme={theme} IconSVG={iconAddAlert}
             label='Dias antes'
             keyboardType='numeric'
             maxLength={2}
-            error={getController.touched.confirmAttendanceDaysBefore && getController.errors.confirmAttendanceDaysBefore}
-            value={getController.confirmAttendanceDaysBefore}
-            onChangeText={handleController.onConfirmAttendanceDaysBeforeChange}
+            error={confirmAttendanceDaysBeforeError}
+            value={confirmAttendanceDaysBeforeValue}
+            onChangeText={confirmAttendanceDaysBeforeChangeText}
           />
           <View style={[styles(theme).viewRow, styles(theme).marginTop]}>
             <CheckBox
               theme={theme}
               label='Imediatamente'
-              isChecked={getController.confirmAttendance.includes('now')}
-              onClick={() => handleController.toggleConfirmAttendance('now')}
+              isChecked={confirmAttendanceIsChecked}
+              onClick={confirmAttendanceOnClick}
             />
             <CheckBox
               theme={theme}
               label='Não confirmar'
               style={styles(theme).marginLeft}
-              isChecked={getController.confirmAttendance.includes('disable')}
-              onClick={() => handleController.toggleConfirmAttendance('disable')}
+              isChecked={notConfirmAttendanceIsChecked}
+              onClick={notConfirmAttendanceOnClick}
             />
           </View>
         </View>
-        {getController.confirmAttendanceError && (
+        {confirmAttendanceError && (
           <Texts.Error theme={theme}>Escolha uma das opções</Texts.Error>
         )}
         <Buttons.Base
           theme={theme}
           label='Defenir local do jogo'
           style={{ marginTop: theme.metrics.large }}
-          onPress={handleController.onSubmit}
+          onPress={onSubmit}
         />
         <Buttons.Link
           theme={theme}
           label='Agora não'
-          onPress={() => { }}
+          onPress={onCancel}
         />
       </PageWrapper>
     );
