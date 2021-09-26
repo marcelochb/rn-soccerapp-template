@@ -12,10 +12,10 @@ export type ModelOfTemplateChangePassword ={
   theme: ModelOfTheme;
   newPasswordValue?: string | undefined;
   newPasswordChangeText: ((text: string) => void) | undefined;
-  newPasswordError: boolean;
+  newPasswordError?: string | boolean | undefined;
   confirmPasswordValue?: string | undefined;
   confirmPasswordChangeText: ((text: string) => void) | undefined;
-  confirmPasswordError: boolean;
+  confirmPasswordError?: string | boolean | undefined;
   onSubmit: (((event: GestureResponderEvent) => void) & ((e: GestureResponderEvent) => void)) | undefined;
   isLoadingSubmit: boolean;
   onCancel: ((() => void) & (() => void)) | undefined;
