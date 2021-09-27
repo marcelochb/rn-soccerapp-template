@@ -7,35 +7,88 @@ import iconAccountCircle from '@src/assets/Icons/iconAccountCircle.svg';
 import iconAssignment from '@src/assets/Icons/iconAssignment.svg';
 import iconDate from '@src/assets/Icons/iconDate.svg';
 import { ModelOfTheme } from '@soccerapp/theme';
+import { styles } from './styles';
 
 
 export const TemplateProfile: React.FC<ModelOfTemplateProfile> = ({
   isStatusBarLight = false,
   isViewOnly = false,
   theme,
+  nickNameValue,
+  nickNameChangeText,
+  nickNameError,
+  lastNameValue,
+  lastNameChangeText,
+  lastNameError,
+  nameValue,
+  nameChangeText,
+  nameError,
+  avatarOnPress,
+  avatarSource,
+  avatarError,
+  birthDateValue,
+  birthDateChangeText,
+  birthDateError,
+  coachingStaffIsChecked,
+  coachingStaffClick,
+  playerIsChecked,
+  playerClick,
+  typeUserIsError,
+  typeUserErrorText,
+  goalKeeperIsChecked,
+  goalKeeperClick,
+  leftBackIsChecked,
+  leftBackClick,
+  rightBackIsChecked,
+  rightBackClick,
+  centralBackIsChecked,
+  centralBackClick,
+  midfielderDefensiveIsChecked,
+  midfielderDefensiveClick,
+  midifielderAttackingIsChecked,
+  midifielderAttackingClick,
+  forwardIsChecked,
+  forwardClick,
+  firstSquadIsChecked,
+  firstSquadClick,
+  secondSquadIsChecked,
+  secondSquadClick,
+  caracteristicValue,
+  caracteristicChange,
+  onSubmit,
+  isloadingSubmit,
+  onCancel,
+  photoPopupDismiss = () => { },
+  photoPopupSelectFromGalery = () => { },
+  photoPopupTakePhoto = () => { },
+  photoPopupVisible = false,
+  popupNotificationOnHandler = () => { },
+  popupNotificationText = '',
+  popupNotificationType = 'Sucesso',
+  popupNotificationVisible = false,
 }) => {
   return (
     <PageWrapper theme={theme} isScrollForm isStatusBarLight={isStatusBarLight}>
       <View style={styles(theme).viewTop}>
         <View style={styles(theme).viewTopLeft}>
           <Input theme={theme} label='Apelido' IconSVG={iconAccountCircle}
-            value={getController.nickname}
-            onChangeText={handleController.onChange('nickname')}
-            error={getController.touched.nickname && getController.errors.nickname}
+            value={nickNameValue}
+            onChangeText={nickNameChangeText}
+            error={nickNameError}
             editable={!isViewOnly}
             style={styles(theme).marginBottom}
           />
           <Input theme={theme} label='Nome' IconSVG={iconPersonOutline}
-            value={getController.name}
-            onChangeText={handleController.onChange('name')}
-            error={getController.touched.name && getController.errors.name}
+            value={nameValue}
+            onChangeText={nameChangeText}
+            error={nameError}
             editable={!isViewOnly}
             style={styles(theme).marginBottom}
           />
           <Input theme={theme} label='Sobrenome' IconSVG={iconAssignment}
-            value={getController.last_name}
-            onChangeText={handleController.onChange('last_name')}
-            error={getController.touched.last_name && getController.errors.last_name}
+            value={lastNameValue}
+            onChangeText={lastNameChangeText}
+            error={lastNameError}
             editable={!isViewOnly}
             style={styles(theme).marginBottom}
           />
@@ -43,42 +96,42 @@ export const TemplateProfile: React.FC<ModelOfTemplateProfile> = ({
         <View style={styles(theme).image}>
           <Avatar
             theme={theme}
-            onPress={handleController.openPhotoPopup}
-            source={getController.avatarImage.sourceURL}
-            error={getController.touched.avatar && getController.errors.avatar}
+            onPress={avatarOnPress}
+            source={avatarSource}
+            error={avatarError}
             disable={isViewOnly}
           />
         </View>
       </View>
       <Input theme={theme} label='Data Nascimento' IconSVG={iconDate}
-        value={getController.birth_date}
-        onChangeText={handleController.onDateChange}
-        error={getController.touched.birth_date && getController.errors.birth_date}
+        value={birthDateValue}
+        onChangeText={birthDateChangeText}
+        error={birthDateError}
         keyboardType='numeric'
         maxLength={10}
         editable={!isViewOnly}
       />
-      <View style={[styles(theme).marginTop, (getController.touched.type && getController.errors.type) ? styles(theme).viewUserTypeError : {}]}>
+      <View style={[styles(theme).marginTop, (typeUserIsError) ? styles(theme).viewUserTypeError : {}]}>
         <Texts.Title theme={theme} small>Tipo</Texts.Title>
         <View
           style={styles(theme).viewUserType}>
           <CheckBox label='Comissão Técnica'
             theme={theme}
-            isChecked={getController.type.includes('CT')}
-            onClick={() => handleController.toggleUserType('CT')}
+            isChecked={coachingStaffIsChecked}
+            onClick={coachingStaffClick}
             disable={isViewOnly}
           />
           <CheckBox label='Jogador'
             theme={theme}
             style={styles(theme).checkBoxPlayerSoccer}
-            isChecked={getController.type.includes('Player')}
-            onClick={() => handleController.toggleUserType('Player')}
+            isChecked={playerIsChecked}
+            onClick={playerClick}
             disable={isViewOnly}
           />
         </View>
       </View>
-      {(getController.touched.type && getController.errors.type) && (
-        <Texts.Error theme={theme}>{getController.errors.type}</Texts.Error>
+      {(typeUserIsError) && (
+        <Texts.Error theme={theme}>{typeUserErrorText}</Texts.Error>
       )}
       <Texts.Title theme={theme} small style={styles(theme).subTitlePosition}>Posição</Texts.Title>
       <View>
@@ -86,28 +139,22 @@ export const TemplateProfile: React.FC<ModelOfTemplateProfile> = ({
           <CheckBox isRadioButton label='GOL'
             theme={theme}
             style={styles(theme).checkBoxPosition}
-            isChecked={getController.position.includes('Goleiro')}
-            onClick={() => handleController.togglePlayerPosition({
-              position_name: 'Goleiro', position_alias: 'GOL'
-            })}
+            isChecked={goalKeeperIsChecked}
+            onClick={goalKeeperClick}
             disable={isViewOnly}
           />
           <CheckBox isRadioButton label='LAT ESQ.'
             theme={theme}
             style={styles(theme).checkBoxPosition}
-            isChecked={getController.position.includes('Lateral esquerdo')}
-            onClick={() => handleController.togglePlayerPosition({
-              position_name: 'Lateral esquerdo', position_alias: 'LAT'
-            })}
+            isChecked={leftBackIsChecked}
+            onClick={leftBackClick}
             disable={isViewOnly}
           />
           <CheckBox isRadioButton label='LAT DIR.'
             theme={theme}
             style={styles(theme).checkBoxPosition}
-            isChecked={getController.position.includes('Lateral direito')}
-            onClick={() => handleController.togglePlayerPosition({
-              position_name: 'Lateral direito', position_alias: 'LAT'
-            })}
+            isChecked={rightBackIsChecked}
+            onClick={rightBackClick}
             disable={isViewOnly}
           />
         </View>
@@ -115,28 +162,22 @@ export const TemplateProfile: React.FC<ModelOfTemplateProfile> = ({
           <CheckBox isRadioButton label='ZAG'
             theme={theme}
             style={styles(theme).checkBoxPosition}
-            isChecked={getController.position.includes('Zagueiro')}
-            onClick={() => handleController.togglePlayerPosition({
-              position_name: 'Zagueiro', position_alias: 'ZAG'
-            })}
+            isChecked={centralBackIsChecked}
+            onClick={centralBackClick}
             disable={isViewOnly}
           />
           <CheckBox isRadioButton label='VOL'
             theme={theme}
             style={styles(theme).checkBoxPosition}
-            isChecked={getController.position.includes('Volante')}
-            onClick={() => handleController.togglePlayerPosition({
-              position_name: 'Volante', position_alias: 'VOL'
-            })}
+            isChecked={midfielderDefensiveIsChecked}
+            onClick={midfielderDefensiveClick}
             disable={isViewOnly}
           />
           <CheckBox isRadioButton label='MEI'
             theme={theme}
             style={styles(theme).checkBoxPosition}
-            isChecked={getController.position.includes('Meia ofensivo')}
-            onClick={() => handleController.togglePlayerPosition({
-              position_name: 'Meia ofensivo', position_alias: 'MEI'
-            })}
+            isChecked={midifielderAttackingIsChecked}
+            onClick={midifielderAttackingClick}
             disable={isViewOnly}
           />
         </View>
@@ -144,10 +185,8 @@ export const TemplateProfile: React.FC<ModelOfTemplateProfile> = ({
           <CheckBox isRadioButton label='ATA'
             theme={theme}
             style={styles(theme).checkBoxPosition}
-            isChecked={getController.position.includes('Atacante')}
-            onClick={() => handleController.togglePlayerPosition({
-              position_name: 'Atacante', position_alias: 'ATA'
-            })}
+            isChecked={forwardIsChecked}
+            onClick={forwardClick}
             disable={isViewOnly}
           />
         </View>
@@ -156,22 +195,22 @@ export const TemplateProfile: React.FC<ModelOfTemplateProfile> = ({
       <View style={styles(theme).viewLinePosition}>
         <CheckBox isRadioButton label='Primeiro quadro'
           theme={theme}
-          isChecked={getController.squad.includes('first')}
-          onClick={() => handleController.toggleSquad('first')}
+          isChecked={firstSquadIsChecked}
+          onClick={firstSquadClick}
           disable={isViewOnly}
         />
         <CheckBox isRadioButton label='Segundo quadro'
           theme={theme}
-          isChecked={getController.squad.includes('second')}
-          onClick={() => handleController.toggleSquad('second')}
+          isChecked={secondSquadIsChecked}
+          onClick={secondSquadClick}
           disable={isViewOnly}
         />
 
       </View>
 
       <Input theme={theme} label='Caracteristicas' multiline
-        value={getController.caracteristic}
-        onChangeText={handleController.onChange('caracteristic')}
+        value={caracteristicValue}
+        onChangeText={caracteristicChange}
         editable={!isViewOnly}
       />
 
@@ -180,29 +219,29 @@ export const TemplateProfile: React.FC<ModelOfTemplateProfile> = ({
           <Buttons.Base
             theme={theme}
             label='Salvar'
-            onPress={handleController.onSubmit}
+            onPress={onSubmit}
             style={styles(theme).button}
-            isLoading={getController.loading}
+            isLoading={isloadingSubmit}
           />
           <Buttons.Link
             theme={theme}
             label='Agora não'
-            onPress={handleController.loggOut}
+            onPress={onCancel}
             style={styles(theme).button}
           />
           <PhotoPopup
             theme={theme}
-            onDismiss={handleController.closePhotoPopup}
-            onSelectFromGalery={handleController.onSelectFromGalery}
-            onTakePhoto={handleController.onTakePhoto}
-            visible={getController.visiblePhotoPopup}
+            onDismiss={photoPopupDismiss}
+            onSelectFromGalery={photoPopupSelectFromGalery}
+            onTakePhoto={photoPopupTakePhoto}
+            visible={photoPopupVisible}
           />
           <Popups.Notification
             theme={theme}
-            onHandler={handleController.closeNotification}
-            text={getController.notificationText}
-            type={getController.notificationType}
-            visible={getController.notificationVisible}
+            onHandler={popupNotificationOnHandler}
+            text={popupNotificationText}
+            type={popupNotificationType}
+            visible={popupNotificationVisible}
           />
         </>
       )}
@@ -210,42 +249,3 @@ export const TemplateProfile: React.FC<ModelOfTemplateProfile> = ({
   );
 }
 
-const styles = (theme: ModelOfTheme) => StyleSheet.create({
-  viewTop: {
-    flexDirection: 'row',
-    justifyContent: 'space-between'
-  },
-  marginBottom: { marginBottom: theme.metrics.base },
-  viewTopLeft: {
-    flex: 1
-  },
-  image: {
-    justifyContent: 'center',
-    marginLeft: theme.metrics.base
-  },
-  viewUserType: {
-    flexDirection: 'row',
-    paddingLeft: theme.metrics.large,
-    paddingTop: theme.metrics.small
-  },
-  viewUserTypeError: {
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: theme.colors.textHighlight
-  },
-  checkBoxPlayerSoccer: {
-    marginLeft: theme.metrics.large,
-  },
-  subTitlePosition: { marginTop: theme.metrics.base, marginBottom: theme.metrics.small },
-  viewLinePosition: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: theme.metrics.large,
-    marginBottom: theme.metrics.base,
-  },
-  checkBoxPosition: {
-    width: 100,
-  },
-  marginTop: { marginTop: theme.metrics.small },
-  button: { marginTop: theme.metrics.large }
-});

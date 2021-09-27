@@ -1,23 +1,25 @@
 import React from 'react';
-import { List, ListItemNotification } from '@src/components/Molecules';
-import { useNotificationListController } from '../Controller';
 import { StyleSheet } from 'react-native';
-import { ThemeBase } from '@src/theme';
-import { PageWrapper } from '@soccerapp/ui';
+import { List, PageWrapper } from '@soccerapp/ui';
+import { ModelOfTemplateNotificationList } from '../Models';
 
 
-export const NotificationList: React.FC = () => {
-  const { getController } = useNotificationListController();
+export const TemplateNotificationList: React.FC<ModelOfTemplateNotificationList> = ({
+  theme,
+  isLoading,
+  data,
+  item,
+}) => {
   return (
-    <PageWrapper theme={ThemeBase} noHorizontalPadding
-      loading={getController.loading}
+    <PageWrapper theme={theme} noHorizontalPadding
+      loading={isLoading}
     >
       <List
+        theme={theme}
         style={styles.list}
-        data={getController.notifications}
-        item={({ item }) => <ListItemNotification item={item} />}
+        data={data}
+        item={item}
       />
-
     </PageWrapper>
   );
 }

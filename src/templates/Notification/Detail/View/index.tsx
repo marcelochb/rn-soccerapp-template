@@ -1,47 +1,142 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { ProfileForm } from '@src/components/Organisms';
-import { useNotificationDetailController } from '../Controller';
-import { ButtonBase, ButtonLink } from '@src/components/Atoms';
-import { colors, metrics } from '@src/theme';
-import { Popups } from '@soccerapp/ui';
-import { ModelOfTheme, ThemeBase } from '@soccerapp/theme';
+import { Popups, Buttons } from '@soccerapp/ui';
+import { ModelOfTheme } from '@soccerapp/theme';
 import { ModelOfTemplateNotificationDetail } from '../Models';
+import { TemplateProfile } from '../../../Profile/View';
 
 
-export const TemplateNotificationDetail: React.FC<ModelOfTemplateNotificationDetail> = ({ theme }) => {
+export const TemplateNotificationDetail: React.FC<ModelOfTemplateNotificationDetail> = ({
+  theme,
+  nickNameValue,
+  nickNameChangeText,
+  nickNameError,
+  lastNameValue,
+  lastNameChangeText,
+  lastNameError,
+  nameValue,
+  nameChangeText,
+  nameError,
+  avatarOnPress,
+  avatarSource,
+  avatarError,
+  birthDateValue,
+  birthDateChangeText,
+  birthDateError,
+  coachingStaffIsChecked,
+  coachingStaffClick,
+  playerIsChecked,
+  playerClick,
+  typeUserIsError,
+  typeUserErrorText,
+  goalKeeperIsChecked,
+  goalKeeperClick,
+  leftBackIsChecked,
+  leftBackClick,
+  rightBackIsChecked,
+  rightBackClick,
+  centralBackIsChecked,
+  centralBackClick,
+  midfielderDefensiveIsChecked,
+  midfielderDefensiveClick,
+  midifielderAttackingIsChecked,
+  midifielderAttackingClick,
+  forwardIsChecked,
+  forwardClick,
+  firstSquadIsChecked,
+  firstSquadClick,
+  secondSquadIsChecked,
+  secondSquadClick,
+  caracteristicValue,
+  caracteristicChange,
+  acceptOnPressed,
+  refusedOnPressed,
+  popupNotificationOnHandler,
+  popupNotificationText,
+  popupNotificationType,
+  popupNotificationVisible,
+  popupConfirmationLoading,
+  popupConfirmationHandleNegativeAnswer,
+  popupConfirmationHandlePositiveAnswer,
+  popupConfirmationLablePositiveAnswer,
+  popupConfirmationQuestion,
+  popupConfirmationVisible,
+}) => {
   return (
     <>
-      <ProfileForm isStatusBarLight isViewOnly
-        data={getController.notification}
+      <TemplateProfile isStatusBarLight isViewOnly
+        theme={theme}
+        nickNameValue={nickNameValue}
+        nickNameChangeText={nickNameChangeText}
+        nickNameError={nickNameError}
+        lastNameValue={lastNameValue}
+        lastNameChangeText={lastNameChangeText}
+        lastNameError={lastNameError}
+        nameValue={nameValue}
+        nameChangeText={nameChangeText}
+        nameError={nameError}
+        avatarOnPress={avatarOnPress}
+        avatarSource={avatarSource}
+        avatarError={avatarError}
+        birthDateValue={birthDateValue}
+        birthDateChangeText={birthDateChangeText}
+        birthDateError={birthDateError}
+        coachingStaffIsChecked={coachingStaffIsChecked}
+        coachingStaffClick={coachingStaffClick}
+        playerIsChecked={playerIsChecked}
+        playerClick={playerClick}
+        typeUserIsError={typeUserIsError}
+        typeUserErrorText={typeUserErrorText}
+        goalKeeperIsChecked={goalKeeperIsChecked}
+        goalKeeperClick={goalKeeperClick}
+        leftBackIsChecked={leftBackIsChecked}
+        leftBackClick={leftBackClick}
+        rightBackIsChecked={rightBackIsChecked}
+        rightBackClick={rightBackClick}
+        centralBackIsChecked={centralBackIsChecked}
+        centralBackClick={centralBackClick}
+        midfielderDefensiveIsChecked={midfielderDefensiveIsChecked}
+        midfielderDefensiveClick={midfielderDefensiveClick}
+        midifielderAttackingIsChecked={midifielderAttackingIsChecked}
+        midifielderAttackingClick={midifielderAttackingClick}
+        forwardIsChecked={forwardIsChecked}
+        forwardClick={forwardClick}
+        firstSquadIsChecked={firstSquadIsChecked}
+        firstSquadClick={firstSquadClick}
+        secondSquadIsChecked={secondSquadIsChecked}
+        secondSquadClick={secondSquadClick}
+        caracteristicValue={caracteristicValue}
+        caracteristicChange={caracteristicChange}
       />
-      <View style={styles.viewButtom}>
+      <View style={styles(theme).viewButtom}>
 
-        <ButtonBase
-          labelOfButtonBase='Aceitar'
-          onPress={handlerController.openConfirmationPlayerAccepted}
+        <Buttons.Base
+          theme={theme}
+          label='Aceitar'
+          onPress={acceptOnPressed}
         />
-        <ButtonLink
+        <Buttons.Link
+          theme={theme}
           label='Recusar'
-          onPress={handlerController.openConfirmationPlayerRefused}
-          style={styles.refuse}
+          onPress={refusedOnPressed}
+          style={styles(theme).refuse}
         />
       </View>
       <Popups.Notification
-        theme={ThemeBase.FamiliaVsc}
-        onHandler={handlerController.closeNotification}
-        text={getController.notificationText}
-        type={getController.notificationType}
-        visible={getController.notificationVisible}
+        theme={theme}
+        onHandler={popupNotificationOnHandler}
+        text={popupNotificationText}
+        type={popupNotificationType}
+        visible={popupNotificationVisible}
       />
       <Popups.Confirmation
-        theme={ThemeBase.FamiliaVsc}
-        loading={getController.loading}
-        handleButtonNegativeAnswer={handlerController.handleButtonNegativeAnswer}
-        handleButtonPositiveAnswer={handlerController.handleButtonPositiveAnswer}
-        lableButtonPositiveAnswer={getController.lableButtonPositiveAnswer}
-        question={getController.confirmationQuestion}
-        visible={getController.confirmationVisible}
+        theme={theme}
+        loading={popupConfirmationLoading}
+        handleButtonNegativeAnswer={popupConfirmationHandleNegativeAnswer}
+        handleButtonPositiveAnswer={popupConfirmationHandlePositiveAnswer}
+        lableButtonPositiveAnswer={popupConfirmationLablePositiveAnswer}
+        question={popupConfirmationQuestion}
+        visible={popupConfirmationVisible}
       />
     </>
   );

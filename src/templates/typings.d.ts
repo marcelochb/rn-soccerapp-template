@@ -4,3 +4,6 @@ export * from './SignUp/Models';
 export * from './Match/Create/Success/Models';
 export * from './Match/Create/DateTime/Models';
 export * from './ChangePassword/Models';
+export * from './Profile/Models';
+export * from './Notification/Detail/Models';
+export * from './Notification/List/Models';
