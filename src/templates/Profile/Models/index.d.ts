@@ -27,7 +27,7 @@ export type ModelOfTemplateProfile = {
   playerIsChecked: boolean;
   playerClick: () => void;
   typeUserIsError: string | boolean | undefined;
-  typeUserErrorText: string;
+  typeUserErrorText: string | undefined;
   goalKeeperIsChecked: boolean;
   goalKeeperClick: () => void;
   leftBackIsChecked: boolean;
