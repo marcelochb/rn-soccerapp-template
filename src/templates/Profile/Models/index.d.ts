@@ -4,6 +4,7 @@ import { Component } from "react";
 import { GestureResponderEvent } from "react-native";
 
 export type ModelOfTemplateProfile = {
+  isScrollForm?: boolean | undefined;
   isStatusBarLight?: boolean;
   isViewOnly?: boolean;
   theme: ModelOfTheme;

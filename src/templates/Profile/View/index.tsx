@@ -11,6 +11,7 @@ import { styles } from './styles';
 
 
 export const TemplateProfile: React.FC<ModelOfTemplateProfile> = ({
+  isScrollForm = false,
   isStatusBarLight = false,
   isViewOnly = false,
   theme,
@@ -68,7 +69,7 @@ export const TemplateProfile: React.FC<ModelOfTemplateProfile> = ({
   popupNotificationVisible = false,
 }) => {
   return (
-    <PageWrapper theme={theme} isScrollForm isStatusBarLight={isStatusBarLight}>
+    <PageWrapper theme={theme} isScrollForm={isScrollForm} isStatusBarLight={isStatusBarLight}>
       <View style={styles(theme).viewTop}>
         <View style={styles(theme).viewTopLeft}>
           <Input theme={theme} label='Apelido' IconSVG={iconAccountCircle}
