@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { List, PageWrapper } from '@soccerapp/ui';
+import { List, ListItemNotification, PageWrapper } from '@soccerapp/ui';
 import { ModelOfTemplateNotificationList } from '../Models';
 
 
@@ -8,7 +8,7 @@ export const TemplateNotificationList: React.FC<ModelOfTemplateNotificationList>
   theme,
   isLoading,
   data,
-  item,
+  navigateTo
 }) => {
   return (
     <PageWrapper theme={theme} noHorizontalPadding
@@ -18,7 +18,14 @@ export const TemplateNotificationList: React.FC<ModelOfTemplateNotificationList>
         theme={theme}
         style={styles.list}
         data={data}
-        item={item}
+        item={({ item }) => <ListItemNotification theme={theme}
+          createdDistance={item.created_distance}
+          lastName={item.last_name}
+          name={item.name}
+          nickName={item.nickname}
+          playerPosition={item.player?.position_name}
+          onPressed={() => navigateTo(item)}
+        />}
       />
     </PageWrapper>
   );
