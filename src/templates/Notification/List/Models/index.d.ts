@@ -8,4 +8,4 @@ export type ModelOfTemplateNotificationList<ItemT = any> = {
   item: (param:ItemT) => React.ReactElement | null;
 }
 
-export class TemplateNotificationList extends Component<ModelOfTemplateNotificationList> {}
+export class TemplateNotificationList<ItemT = any> extends Component<ModelOfTemplateNotificationList<ItemT>> {}
