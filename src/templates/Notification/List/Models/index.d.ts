@@ -1,8 +1,7 @@
 import { ModelOfTheme } from "@soccerapp/theme";
 import { Component } from "react";
-import { ListRenderItem } from "react-native";
 
-type ModelOfItemT = {
+type ModelOfTemplateNotificationListItemT = {
   nickname?: string;
   name?: string;
   last_name?: string;
@@ -12,7 +11,7 @@ type ModelOfItemT = {
   }
   created_distance?: string;
   }
-export type ModelOfTemplateNotificationList<ItemT = ModelOfItemT> = {
+export type ModelOfTemplateNotificationList<ItemT = ModelOfTemplateNotificationListItemT> = {
   theme: ModelOfTheme;
   isLoading: boolean;
   data?: Array<ItemT>;
