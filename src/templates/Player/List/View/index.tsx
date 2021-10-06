@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { List, CardPlayer, PageWrapper, Texts } from '@soccerapp/ui';
-import { ModelOfTemplatePlayers } from '../Models';
+import { ModelOfTemplatePlayerList } from '../Models';
 import { ModelOfTheme } from '@soccerapp/theme';
 
-export const TemplatePlayers: React.FC<ModelOfTemplatePlayers> = ({
+export const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
   theme,
   isLoading,
   coachingStaffData,

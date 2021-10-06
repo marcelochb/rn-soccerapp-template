@@ -7,4 +7,5 @@ export {TemplateChangePassword} from './ChangePassword/View';
 export {TemplateProfile} from './Profile/View';
 export {TemplateNotificationDetail} from './Notification/Detail/View';
 export {TemplateNotificationList} from './Notification/List/View';
-export {TemplatePlayers} from './Players/View';
+export {TemplatePlayerList} from './Player/List/View';
+export {TemplatePlayerTabView} from './Player/Tabview/View';

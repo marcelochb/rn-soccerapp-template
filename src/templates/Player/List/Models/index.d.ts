@@ -2,13 +2,13 @@ import { ModelOfTheme } from "@soccerapp/theme";
 import { Component } from "react";
 
 
-type ModelOfTemplatePlayersItemT = {
+type ModelOfTemplatePlayerListItemT = {
   nickname?: string;
   name?: string;
   avatar?: string;
   }
 
-export type ModelOfTemplatePlayers<ItemT = ModelOfTemplatePlayersItemT> = {
+export type ModelOfTemplatePlayerList<ItemT = ModelOfTemplatePlayerListItemT> = {
   theme: ModelOfTheme;
   isLoading: boolean;
   coachingStaffData: Array<ItemT>;
@@ -27,4 +27,4 @@ export type ModelOfTemplatePlayers<ItemT = ModelOfTemplatePlayersItemT> = {
   forwardNavigateTo: ((item: ItemT) => void);
 }
 
-export class TemplatePlayers extends Component<ModelOfTemplatePlayers> {}
+export class TemplatePlayerList extends Component<ModelOfTemplatePlayerList> {}

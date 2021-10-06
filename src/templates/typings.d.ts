@@ -7,4 +7,5 @@ export * from './ChangePassword/Models';
 export * from './Profile/Models';
 export * from './Notification/Detail/Models';
 export * from './Notification/List/Models';
-export * from './Players/Models';
+export * from './Player/List/Models';
+export * from './Player/Tabview/Models';
