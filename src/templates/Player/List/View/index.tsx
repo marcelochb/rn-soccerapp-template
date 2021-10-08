@@ -8,19 +8,13 @@ export const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
   theme,
   isLoading,
   coachingStaffData,
-  coachingStaffNavigateTo,
+  navigateToDetail,
   goalKeeperData,
-  goalKeeperNavigateTo,
   centerBackData,
-  centerBackNavigateTo,
   leftAndRightBackData,
-  leftAndRightBackNavigateTo,
   midifieldDefenseData,
-  midifieldDefenseNavigateTo,
   midifieldAttackData,
-  midifieldAttackNavigateTo,
   forwardData,
-  forwardNavigateTo,
 }) => {
   return (
     <PageWrapper theme={theme} loading={isLoading} isScrollList>
@@ -33,7 +27,7 @@ export const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
           avatarSource={item.avatar}
           nickname={item.nickname}
           name={item.name}
-          navigateTo={() => coachingStaffNavigateTo(item)}
+          navigateTo={() => navigateToDetail(item)}
         />}
       />
       {goalKeeperData.length > 0 && <Texts.Title theme={theme} small>Goleiros</Texts.Title>}
@@ -45,7 +39,7 @@ export const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
           avatarSource={item.avatar}
           nickname={item.nickname}
           name={item.name}
-          navigateTo={() => goalKeeperNavigateTo(item)}
+          navigateTo={() => navigateToDetail(item)}
         />}
       />
       {centerBackData.length > 0 && <Texts.Title theme={theme} small>Zagueiros</Texts.Title>}
@@ -57,7 +51,7 @@ export const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
           avatarSource={item.avatar}
           nickname={item.nickname}
           name={item.name}
-          navigateTo={() => centerBackNavigateTo(item)}
+          navigateTo={() => navigateToDetail(item)}
         />}
       />
       {leftAndRightBackData.length > 0 && <Texts.Title theme={theme} small>Laterais</Texts.Title>}
@@ -69,7 +63,7 @@ export const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
           avatarSource={item.avatar}
           nickname={item.nickname}
           name={item.name}
-          navigateTo={() => leftAndRightBackNavigateTo(item)}
+          navigateTo={() => navigateToDetail(item)}
         />}
       />
       {midifieldDefenseData.length > 0 && <Texts.Title theme={theme} small>Volantes</Texts.Title>}
@@ -81,7 +75,7 @@ export const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
           avatarSource={item.avatar}
           nickname={item.nickname}
           name={item.name}
-          navigateTo={() => midifieldDefenseNavigateTo(item)}
+          navigateTo={() => navigateToDetail(item)}
         />}
       />
       {midifieldAttackData.length > 0 && <Texts.Title theme={theme} small>Meio campo</Texts.Title>}
@@ -93,7 +87,7 @@ export const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
           avatarSource={item.avatar}
           nickname={item.nickname}
           name={item.name}
-          navigateTo={() => midifieldAttackNavigateTo(item)}
+          navigateTo={() => navigateToDetail(item)}
         />}
       />
       {forwardData.length > 0 && <Texts.Title theme={theme} small>Atacantes</Texts.Title>}
@@ -105,7 +99,7 @@ export const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
           avatarSource={item.avatar}
           nickname={item.nickname}
           name={item.name}
-          navigateTo={() => forwardNavigateTo(item)}
+          navigateTo={() => navigateToDetail(item)}
         />}
       />
     </PageWrapper>
