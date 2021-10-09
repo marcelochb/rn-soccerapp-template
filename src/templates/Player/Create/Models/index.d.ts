@@ -3,7 +3,7 @@ import { Popups } from "@soccerapp/ui";
 import { Component } from "react";
 import { GestureResponderEvent } from "react-native";
 
-export type ModelOfTemplateProfile = {
+export type ModelOfTemplatePlayerCreate = {
   isScrollForm?: boolean | undefined;
   isStatusBarLight?: boolean;
   isViewOnly?: boolean;
@@ -62,4 +62,4 @@ export type ModelOfTemplateProfile = {
   popupNotificationVisible?: boolean;
 }
 
-export class TemplateProfile extends Component<ModelOfTemplateProfile> {}
+export class TemplatePlayerCreate extends Component<ModelOfTemplatePlayerCreate> {}

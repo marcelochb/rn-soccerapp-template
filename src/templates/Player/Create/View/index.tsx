@@ -1,16 +1,15 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { ModelOfTemplateProfile } from '../Models';
+import { View } from 'react-native';
+import { ModelOfTemplatePlayerCreate } from '../Models';
 import { PageWrapper, Input, Popups, Avatar, CheckBox, Texts, Buttons, PhotoPopup } from '@soccerapp/ui';
 import iconPersonOutline from '@src/assets/Icons/iconPersonOutline.svg';
 import iconAccountCircle from '@src/assets/Icons/iconAccountCircle.svg';
 import iconAssignment from '@src/assets/Icons/iconAssignment.svg';
 import iconDate from '@src/assets/Icons/iconDate.svg';
-import { ModelOfTheme } from '@soccerapp/theme';
 import { styles } from './styles';
 
 
-export const TemplateProfile: React.FC<ModelOfTemplateProfile> = ({
+export const TemplatePlayerCreate: React.FC<ModelOfTemplatePlayerCreate> = ({
   isScrollForm = false,
   isStatusBarLight = false,
   isViewOnly = false,
