@@ -1,10 +1,10 @@
 import { Popups } from "@soccerapp/ui";
 import { Component } from "react";
 import { GestureResponderEvent } from "react-native";
-import { ModelOfTemplateProfile } from "../../../Profile/Models";
+import { ModelOfTemplatePlayerCreate } from "../../../Player/Create/Models";
 
 
-export type ModelOfTemplateNotificationDetail = ModelOfTemplateProfile & {
+export type ModelOfTemplateNotificationDetail = ModelOfTemplatePlayerCreate & {
   acceptOnPressed: (((event: GestureResponderEvent) => void) & ((e: GestureResponderEvent) => void)) | undefined
   refusedOnPressed: ((() => void) & (() => void)) | undefined;
   popupNotificationOnHandler: () => void;

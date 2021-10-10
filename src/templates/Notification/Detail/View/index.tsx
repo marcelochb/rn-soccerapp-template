@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import { Popups, Buttons } from '@soccerapp/ui';
 import { ModelOfTheme } from '@soccerapp/theme';
 import { ModelOfTemplateNotificationDetail } from '../Models';
-import { TemplateProfile } from '../../../Profile/View';
+import { TemplatePlayerCreate } from '../../../Player/Create/View';
 
 
 export const TemplateNotificationDetail: React.FC<ModelOfTemplateNotificationDetail> = ({
@@ -64,7 +64,7 @@ export const TemplateNotificationDetail: React.FC<ModelOfTemplateNotificationDet
 }) => {
   return (
     <>
-      <TemplateProfile isStatusBarLight isViewOnly
+      <TemplatePlayerCreate isStatusBarLight isViewOnly
         theme={theme}
         nickNameValue={nickNameValue}
         nickNameChangeText={nickNameChangeText}
