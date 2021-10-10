@@ -10,3 +10,4 @@ export {TemplatePlayerList} from './Player/List/View';
 export {TemplatePlayerTabView} from './Player/Tabview/View';
 export {TemplatePlayerCreate} from './Player/Create/View';
 export {TemplateTeamCreate} from './Team/create/View';
+export {TemplateTeamList} from './Team/List/View';
