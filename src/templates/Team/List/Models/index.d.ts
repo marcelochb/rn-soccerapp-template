@@ -19,4 +19,4 @@ export type ModelOfTemplateTeamList<ItemT = ModelOfTemplateTeamListItemT> = {
   navigateToTeamCreate: () => void;
 }
 
-export class TemplateTeamList extends Component<ModelOfTemplateTeamList> {}
+export class TemplateTeamList<ItemT = any> extends Component<ModelOfTemplateTeamList<ItemT>> {}
