@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { List, CardPlayer, PageWrapper, Texts } from '@soccerapp/ui';
+import { List, ListItemPlayer, PageWrapper, Texts } from '@soccerapp/ui';
 import { ModelOfTemplatePlayerList } from '../Models';
 import { ModelOfTheme } from '@soccerapp/theme';
 
@@ -23,7 +23,7 @@ export const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
         style={styles(theme).list}
         data={coachingStaffData}
         horizontal
-        item={({ item }) => <CardPlayer theme={theme}
+        item={({ item }) => <ListItemPlayer theme={theme}
           avatarSource={item.avatar}
           nickname={item.nickname}
           name={item.name}
@@ -35,7 +35,7 @@ export const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
         style={styles(theme).list}
         data={goalKeeperData}
         horizontal
-        item={({ item }) => <CardPlayer theme={theme}
+        item={({ item }) => <ListItemPlayer theme={theme}
           avatarSource={item.avatar}
           nickname={item.nickname}
           name={item.name}
@@ -47,7 +47,7 @@ export const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
         style={styles(theme).list}
         data={centerBackData}
         horizontal
-        item={({ item }) => <CardPlayer theme={theme}
+        item={({ item }) => <ListItemPlayer theme={theme}
           avatarSource={item.avatar}
           nickname={item.nickname}
           name={item.name}
@@ -59,7 +59,7 @@ export const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
         style={styles(theme).list}
         data={leftAndRightBackData}
         horizontal
-        item={({ item }) => <CardPlayer theme={theme}
+        item={({ item }) => <ListItemPlayer theme={theme}
           avatarSource={item.avatar}
           nickname={item.nickname}
           name={item.name}
@@ -71,7 +71,7 @@ export const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
         style={styles(theme).list}
         data={midifieldDefenseData}
         horizontal
-        item={({ item }) => <CardPlayer theme={theme}
+        item={({ item }) => <ListItemPlayer theme={theme}
           avatarSource={item.avatar}
           nickname={item.nickname}
           name={item.name}
@@ -83,7 +83,7 @@ export const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
         style={styles(theme).list}
         data={midifieldAttackData}
         horizontal
-        item={({ item }) => <CardPlayer theme={theme}
+        item={({ item }) => <ListItemPlayer theme={theme}
           avatarSource={item.avatar}
           nickname={item.nickname}
           name={item.name}
@@ -95,7 +95,7 @@ export const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
         style={styles(theme).list}
         data={forwardData}
         horizontal
-        item={({ item }) => <CardPlayer theme={theme}
+        item={({ item }) => <ListItemPlayer theme={theme}
           avatarSource={item.avatar}
           nickname={item.nickname}
           name={item.name}
