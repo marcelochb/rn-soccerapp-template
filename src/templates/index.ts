@@ -11,3 +11,4 @@ export {TemplatePlayerTabView} from './Player/Tabview/View';
 export {TemplatePlayerCreate} from './Player/Create/View';
 export {TemplateTeamCreate} from './Team/create/View';
 export {TemplateTeamList} from './Team/List/View';
+export {TemplateMatchCreateLocation} from './Match/Create/Location/View';

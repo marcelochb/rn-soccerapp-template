@@ -11,3 +11,4 @@ export * from './Player/Tabview/Models';
 export * from './Player/Create/Models';
 export * from './Team/create/Models';
 export * from './Team/List/Models';
+export * from './Match/Create/Location/Models';
