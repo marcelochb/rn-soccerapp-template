@@ -1,6 +1,6 @@
 import { TabBarView } from '@soccerapp/ui';
 import React from 'react';
-import { TemplatePlayerList } from '../../List/View';
+import TemplatePlayerList from '../../List/View';
 import { ModelOfTemplatePlayerTabview } from '../Models';
 
 export const TemplatePlayerTabView: React.FC<ModelOfTemplatePlayerTabview> = ({
@@ -15,6 +15,8 @@ export const TemplatePlayerTabView: React.FC<ModelOfTemplatePlayerTabview> = ({
   firstSquadmidifieldAttackData,
   firstSquadforwardData,
   firstSquadBadge,
+  firstTabTitle,
+  secondTabTitle,
   secondSquadisLoading,
   secondSquadcoachingStaffData,
   secondSquadgoalKeeperData,
@@ -27,6 +29,7 @@ export const TemplatePlayerTabView: React.FC<ModelOfTemplatePlayerTabview> = ({
 }) => {
   return (
     <TabBarView theme={theme}
+    firstTabTitle={firstTabTitle}
       FirstTab={() => <TemplatePlayerList theme={theme}
         isLoading={firstSquadisLoading}
         navigateToDetail={navigateToDetail}
@@ -39,6 +42,7 @@ export const TemplatePlayerTabView: React.FC<ModelOfTemplatePlayerTabview> = ({
         forwardData={firstSquadforwardData}
       />}
       FirstTabBadge={firstSquadBadge}
+      secondTabTitle={secondTabTitle}
       SecondTab={() => <TemplatePlayerList theme={theme}
         isLoading={secondSquadisLoading}
         navigateToDetail={navigateToDetail}

@@ -12,7 +12,7 @@ export const TemplateNotificationList: React.FC<ModelOfTemplateNotificationList>
 }) => {
   return (
     <PageWrapper theme={theme} noHorizontalPadding
-      loading={isLoading}
+      loading={isLoading} isScrollList
     >
       <List
         theme={theme}

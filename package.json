@@ -16,8 +16,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@soccerapp/theme": "git+ssh://git@github.com:marcelochb/rn-soccerapp-theme",
-    "@soccerapp/ui": "git+ssh://git@github.com:marcelochb/rn-soccerapp-ui",
+    "@soccerapp/theme": "file:../rn-soccerapp-theme/",
+    "@soccerapp/ui": "file:../rn-soccerapp-ui/",
     "react": "16.13.1",
     "react-native": "0.63.3",
     "react-native-svg": "^12.1.1",

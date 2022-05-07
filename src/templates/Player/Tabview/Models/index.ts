@@ -3,6 +3,8 @@ import { Component } from "react";
 
 export type ModelOfTemplatePlayerTabview<ItemT = any> = {
   theme: ModelOfTheme;
+  firstTabTitle: string;
+  secondTabTitle: string;
   firstSquadisLoading: boolean;
   firstSquadcoachingStaffData: Array<ItemT>;
   navigateToDetail: ((item: ItemT) => void);

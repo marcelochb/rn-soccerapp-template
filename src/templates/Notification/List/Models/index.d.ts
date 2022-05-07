@@ -15,7 +15,7 @@ export type ModelOfTemplateNotificationList<ItemT = ModelOfTemplateNotificationL
   theme: ModelOfTheme;
   isLoading: boolean;
   data?: Array<ItemT>;
-  navigateTo: (notification: ItemT) => void
+  navigateTo: (notification: ItemT) => void;
 }
 
 export class TemplateNotificationList<ItemT = any> extends Component<ModelOfTemplateNotificationList<ItemT>> {}

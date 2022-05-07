@@ -4,7 +4,7 @@ import { List, ListItemPlayer, PageWrapper, Texts } from '@soccerapp/ui';
 import { ModelOfTemplatePlayerList } from '../Models';
 import { ModelOfTheme } from '@soccerapp/theme';
 
-export const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
+const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
   theme,
   isLoading,
   coachingStaffData,
@@ -109,3 +109,5 @@ export const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
 const styles = (theme: ModelOfTheme) => StyleSheet.create({
   list: { marginTop: theme.metrics.small, marginBottom: theme.metrics.large }
 })
+
+export default React.memo(TemplatePlayerList)
