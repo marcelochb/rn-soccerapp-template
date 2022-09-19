@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 import { List, ListItemPlayer, PageWrapper, Texts } from '@soccerapp/ui';
 import { ModelOfTemplatePlayerList } from '../Models';
 import { ModelOfTheme } from '@soccerapp/theme';
@@ -18,6 +18,7 @@ const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
 }) => {
   return (
     <PageWrapper theme={theme} loading={isLoading} isScrollList>
+      <ScrollView>
       {coachingStaffData.length > 0 && <Texts.Title theme={theme} small>Comissão técnica</Texts.Title>}
       <List theme={theme}
         style={styles(theme).list}
@@ -102,6 +103,7 @@ const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
           navigateTo={() => navigateToDetail(item)}
         />}
       />
+      </ScrollView>
     </PageWrapper>
   );
 }
