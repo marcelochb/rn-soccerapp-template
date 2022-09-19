@@ -41,7 +41,6 @@ export const TemplateSignIn: React.FC<ModelOfTemplateSignIn> = ({
       </View>
       <ScrollView keyboardShouldPersistTaps='handled'>
         <Animated.View style={[styles(theme).viewBottom, handleController.moveViewUp.getLayout()]}>
-          <Texts.Title theme={theme}>Login</Texts.Title>
           <Input
             theme={theme}
             IconSVG={IconMail}
