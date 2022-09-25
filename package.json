@@ -16,16 +16,16 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@soccerapp/theme": "file:../rn-soccerapp-theme/",
-    "@soccerapp/ui": "file:../rn-soccerapp-ui/",
+    "@soccerapp/theme": "*",
+    "@soccerapp/ui": "*",
     "react": "18.0.0",
     "react-native": "0.69.1",
     "react-native-svg": "^12.1.1",
     "react-native-svg-transformer": "^0.14.3"
   },
   "peerDependencies": {
-    "@soccerapp/theme": "git+ssh://git@github.com:marcelochb/rn-soccerapp-theme",
-    "@soccerapp/ui": "git+ssh://git@github.com:marcelochb/rn-soccerapp-ui",
+    "@soccerapp/theme": "*",
+    "@soccerapp/ui": "*",
     "react": "18.0.0",
     "react-native": "0.69.1",
     "react-native-svg": "^12.1.1",

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import IconPassword from '@src/assets/Icons/iconPassword.svg';
+import IconPassword from '@src/assetstemplate/Icons/iconPassword.svg';
 import { ModelOfTemplateChangePassword } from '../Models';
 import { PageWrapper, Input, Texts, Buttons } from '@soccerapp/ui';
 import { ModelOfTheme } from '@soccerapp/theme';

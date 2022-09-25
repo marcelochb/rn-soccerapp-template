@@ -4,9 +4,9 @@ import { View } from 'react-native';
 import { ModelOfTemplateMatchCreateDateTime } from '../Models';
 import { styles } from './styles';
 import { Avatar } from '@soccerapp/ui';
-import iconDate from '@src/assets/Icons/iconDate.svg';
-import iconHour from '@src/assets/Icons/iconHour.svg';
-import iconAddAlert from '@src/assets/Icons/iconAddAlert.svg';
+import iconDate from '@src/assetstemplate/Icons/iconDate.svg';
+import iconHour from '@src/assetstemplate/Icons/iconHour.svg';
+import iconAddAlert from '@src/assetstemplate/Icons/iconAddAlert.svg';
 
 export const TemplateMatchCreateDateTime
   : React.FC<ModelOfTemplateMatchCreateDateTime> = ({

@@ -2,10 +2,10 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { PageWrapper, Input, Avatar, PhotoPopup, Buttons } from '@soccerapp/ui';
 import { ModelOfTheme } from '@soccerapp/theme';
-import IconPlayers from '@src/assets/Icons/iconPlayers.svg';
-import IconPersonOutline from '@src/assets/Icons/iconPersonOutline.svg';
-import IconPhone from '@src/assets/Icons/iconPhone.svg';
-import IconDescription from '@src/assets/Icons/iconDescription.svg';
+import IconPlayers from '@src/assetstemplate/Icons/iconPlayers.svg';
+import IconPersonOutline from '@src/assetstemplate/Icons/iconPersonOutline.svg';
+import IconPhone from '@src/assetstemplate/Icons/iconPhone.svg';
+import IconDescription from '@src/assetstemplate/Icons/iconDescription.svg';
 import { ModelOfTemplateTeamCreate } from '../Models';
 
 

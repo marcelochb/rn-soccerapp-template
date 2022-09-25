@@ -8,8 +8,8 @@ import { Texts, Input, Buttons, Popups, SignUpPopup } from '@soccerapp/ui';
 
 import { styles } from './styles';
 
-import IconPassword from '@src/assets/Icons/iconPassword.svg';
-import IconMail from '@src/assets/Icons/iconMail.svg';
+import IconPassword from '@src/assetstemplate/Icons/iconPassword.svg';
+import IconMail from '@src/assetstemplate/Icons/iconMail.svg';
 
 
 export const TemplateSignIn: React.FC<ModelOfTemplateSignIn> = ({

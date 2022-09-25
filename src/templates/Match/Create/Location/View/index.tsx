@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { PageWrapper, Input,Avatar, Texts, Buttons } from '@soccerapp/ui';
-import iconRoad from '@src/assets/Icons/iconRoad.svg';
-import iconPlace from '@src/assets/Icons/iconPlace.svg';
-import iconHouse from '@src/assets/Icons/iconHouse.svg';
-import iconDirections from '@src/assets/Icons/iconDirections.svg';
-import iconDescription from '@src/assets/Icons/iconDescription.svg';
-import iconSoccerField from '@src/assets/Icons/iconSoccerField.svg';
+import iconRoad from '@src/assetstemplate/Icons/iconRoad.svg';
+import iconPlace from '@src/assetstemplate/Icons/iconPlace.svg';
+import iconHouse from '@src/assetstemplate/Icons/iconHouse.svg';
+import iconDirections from '@src/assetstemplate/Icons/iconDirections.svg';
+import iconDescription from '@src/assetstemplate/Icons/iconDescription.svg';
+import iconSoccerField from '@src/assetstemplate/Icons/iconSoccerField.svg';
 import { ModelOfTemplateMatchCreateLocation } from '../Models';
 import { styles } from './styles';
 

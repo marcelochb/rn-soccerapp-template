@@ -1,5 +1,6 @@
-import { Buttons, HeaderGroupedList, ListGrouped, ListItemMatch, PageWrapper, Texts } from '@soccerapp/ui';
+import { ActionSheetSquad, Buttons, HeaderGroupedList, ListGrouped, ListItemMatch, PageWrapper, Texts } from '@soccerapp/ui';
 import React from 'react';
+import { View } from 'react-native';
 import { ModelOfTemplateMatchList } from '../Models';
 
 const TemplateMatchList: React.FC<ModelOfTemplateMatchList> = ({
@@ -13,13 +14,16 @@ const TemplateMatchList: React.FC<ModelOfTemplateMatchList> = ({
   IconPlus,
 }) => {
   return (
-    <PageWrapper theme={theme} isScrollList
+    <PageWrapper theme={theme}
       loading={isLoading}
       ButtonFixed={<Buttons.Fixed 
         theme={theme}
         onPress={navigateToCreate}
         IconSVG={IconPlus}
       />}
+      hasActionSheet
+      actionSheetBody={<ActionSheetSquad theme={theme} />}
+      actionSheetVisible
     >
       <ListGrouped 
         theme={theme}

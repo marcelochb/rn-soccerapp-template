@@ -6,8 +6,8 @@ import { ModelOfTheme } from '@soccerapp/theme';
 
 import { ModelOfTemplateSignUp } from '../Models';
 
-import IconMail from '@src/assets/Icons/iconMail.svg';
-import IconPassword from '@src/assets/Icons/iconPassword.svg';
+import IconMail from '@src/assetstemplate/Icons/iconMail.svg';
+import IconPassword from '@src/assetstemplate/Icons/iconPassword.svg';
 
 export const TemplateSignUp: React.FC<ModelOfTemplateSignUp> = ({
   theme,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageWrapper, Texts, Buttons } from '@soccerapp/ui';
 import { ModelOfTemplateMatchCreateSuccess } from '../Models';
-import IconConfirmed from '@src/assets/Icons/iconConfirmed.svg';
+import IconConfirmed from '@src/assetstemplate/Icons/iconConfirmed.svg';
 import { View } from 'react-native';
 
 export const TemplateMatchCreateSuccess:

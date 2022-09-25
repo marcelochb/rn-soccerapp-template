@@ -1,5 +1,5 @@
 import React from 'react';
-import iconPlus from '@src/assets/Icons/iconPlus.svg';
+import iconPlus from '@src/assetstemplate/Icons/iconPlus.svg';
 import { Buttons, List, ListItemTeam, PageWrapper } from '@soccerapp/ui';
 import { ModelOfTemplateTeamList } from '../Models';
 
