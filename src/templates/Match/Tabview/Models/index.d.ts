@@ -15,8 +15,6 @@ export type ModelOfTemplateMatchTabView<ItemT = any,SectionT = any> = {
   firstSquadData: Array<SectionListData<ItemT, SectionT>>;
   secondTabTitle: string;
   secondSquadData: Array<SectionListData<ItemT, SectionT>>;
-  actionSheetDismiss: () => void;
-  actionSheetVisible: boolean;
   actionSheetIsCheckedFirstSquad: boolean;
   actionSheetOnClickFirstSquad: () => void;
   actionSheetIsCheckedSecondSquad: boolean;
