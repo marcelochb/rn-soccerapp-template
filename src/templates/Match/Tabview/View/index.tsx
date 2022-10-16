@@ -16,10 +16,6 @@ teamCrest,
 firstSquadData,
 secondTabTitle,
 secondSquadData,
-actionSheetIsCheckedFirstSquad,
-actionSheetOnClickFirstSquad,
-actionSheetIsCheckedSecondSquad,
-actionSheetOnClickSecondSquad,
 actionSheetOnPress,
 }) => {
   const ref = useRef<any>();
@@ -33,16 +29,7 @@ actionSheetOnPress,
       IconSVG={IconPlus}
     />
   }
-    actionSheet={
-      <ActionSheetSquad theme={theme} 
-        isCheckedFirstSquad={actionSheetIsCheckedFirstSquad}
-        isCheckedSecondSquad={actionSheetIsCheckedSecondSquad}
-        onClickFirstSquad={actionSheetOnClickFirstSquad}
-        onClickSecondSquad={actionSheetOnClickSecondSquad}
-        onPress={actionSheetOnPress}
-        ref={ref}
-      />
-    }
+    actionSheet={<ActionSheetSquad theme={theme} onPress={actionSheetOnPress} ref={ref}/>}
     Header={
     <Buttons.Link theme={theme}
     onPress={() => ref.current?.show()}

@@ -15,14 +15,7 @@ export type ModelOfTemplateMatchTabView<ItemT = any,SectionT = any> = {
   firstSquadData: Array<SectionListData<ItemT, SectionT>>;
   secondTabTitle: string;
   secondSquadData: Array<SectionListData<ItemT, SectionT>>;
-  actionSheetIsCheckedFirstSquad: boolean;
-  actionSheetOnClickFirstSquad: () => void;
-  actionSheetIsCheckedSecondSquad: boolean;
-  actionSheetOnClickSecondSquad: () => void;
-  actionSheetOnPress:
-  | (((event: GestureResponderEvent) => void) &
-      ((e: GestureResponderEvent) => void))
-  | undefined;
+  actionSheetOnPress: (squad:string) => void;
 
 }
 
