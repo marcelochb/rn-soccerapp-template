@@ -16,7 +16,7 @@ export type ModelOfTemplateMatchTabView<ItemT = any,SectionT = any> = {
   secondTabTitle: string;
   secondSquadData: Array<SectionListData<ItemT, SectionT>>;
   actionSheetOnPress: (squad:string) => void;
-
+  actionSheetLabel: string;
 }
 
 export class TemplateMatchTabView extends Component<ModelOfTemplateMatchTabView> {}

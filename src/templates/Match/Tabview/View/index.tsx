@@ -17,36 +17,35 @@ firstSquadData,
 secondTabTitle,
 secondSquadData,
 actionSheetOnPress,
+actionSheetLabel,
 }) => {
   const ref = useRef<any>();
   return (
     <PageWrapper theme={theme}
     loading={isLoading}
     ButtonFixed={
-    <Buttons.Fixed 
-      theme={theme}
-      onPress={navigateToCreate}
-      IconSVG={IconPlus}
-    />
-  }
+      <Buttons.Fixed 
+        theme={theme}
+        onPress={navigateToCreate}
+        IconSVG={IconPlus}
+      />
+    }
     actionSheet={<ActionSheetSquad theme={theme} onPress={actionSheetOnPress} ref={ref}/>}
     Header={
-    <Buttons.Link theme={theme}
-    onPress={() => ref.current?.show()}
-    IconSVG={IconArrowDropDown}
-    IconColor={theme.colors.textElements}
-    styleLabel={
-      {
-        fontSize: theme.fontSize.large,
-        color: theme.colors.textElements,
-    }}
-    style={
-      {
-        justifyContent: 'center',
-      }}
-    label='Primeiro quadro'
-  />
-}
+      <Buttons.Link theme={theme}
+        onPress={() => ref.current?.show()}
+        IconSVG={IconArrowDropDown}
+        IconColor={theme.colors.textElements}
+        styleLabel={{
+            fontSize: theme.fontSize.large,
+            color: theme.colors.textElements,
+        }}
+        style={{
+            justifyContent: 'center',
+          }}
+        label={actionSheetLabel}
+      />
+    }
   >
   <TabBarView theme={theme}
   firstTabTitle={firstTabTitle}
