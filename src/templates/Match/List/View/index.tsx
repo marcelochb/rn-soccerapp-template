@@ -1,4 +1,4 @@
-import { HeaderGroupedList, ListGrouped, ListItemMatch } from '@soccerapp/ui';
+import { HeaderGroupedList, ListGrouped, ListItemMatch, EmptyMatchList } from '@soccerapp/ui';
 import React from 'react';
 import { ModelOfTemplateMatchList } from '../Models';
 
@@ -12,6 +12,7 @@ const TemplateMatchList: React.FC<ModelOfTemplateMatchList> = ({
   return (
       <ListGrouped 
         theme={theme}
+        emptyList={<EmptyMatchList theme={theme} />}
         data={data}
         header={({section: {yearMonth}}) => <HeaderGroupedList themme={theme} yearMonth={yearMonth} />}
         item={({item}) => <ListItemMatch 
