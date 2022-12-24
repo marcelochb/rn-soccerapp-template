@@ -18,16 +18,16 @@
   "dependencies": {
     "@soccerapp/theme": "*",
     "@soccerapp/ui": "*",
-    "react": "18.0.0",
-    "react-native": "0.69.1",
+    "react": "18.1.0",
+    "react-native": "0.70.6",
     "react-native-svg": "^12.1.1",
     "react-native-svg-transformer": "^0.14.3"
   },
   "peerDependencies": {
     "@soccerapp/theme": "*",
     "@soccerapp/ui": "*",
-    "react": "18.0.0",
-    "react-native": "0.69.1",
+    "react": "18.1.0",
+    "react-native": "0.70.6",
     "react-native-svg": "^12.1.1",
     "react-native-svg-transformer": "^0.14.3"
   },
@@ -46,8 +46,8 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^2.5.0",
     "jest": "^25.1.0",
-    "metro-react-native-babel-preset": "^0.59.0",
-    "react-test-renderer": "16.13.1",
+    "metro-react-native-babel-preset": "0.72.3",
+    "react-test-renderer": "18.1.0",
     "typescript": "^4.3.4"
   },
   "jest": {
