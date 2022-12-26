@@ -12,10 +12,10 @@ export type ModelOfTemplateSignIn = {
   emailOnChangeText?: ((text: string) => void) | undefined
   passwordValue?: string | undefined
   passwordOnChangeText?: ((text: string) => void) | undefined
-  passwordOnSubmitEditing?: ((e: NativeSyntheticEvent<TextInputSubmitEditingEventData>) => void) | undefined
-  buttonSignInOnPress: (((event: GestureResponderEvent) => void) & ((e: GestureResponderEvent) => void)) | undefined
+  passwordOnSubmitEditing?: (e?: any |  undefined) => void
+  buttonSignInOnPress: (e?: any |  undefined) => void
   buttonSignInIsLoading?: boolean | undefined
-  buttonSignUpOnPress: ((() => void) & (() => void))
+  buttonSignUpOnPress: (e?: any |  undefined) => void
   buttonCancelOnPress: ((() => void) & (() => void))
   signUpPopupVisible: boolean;
   signUpPopupOnDismiss: () => void;

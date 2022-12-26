@@ -28,9 +28,7 @@ export const TemplateSignIn: React.FC<ModelOfTemplateSignIn> = ({
   signUpPopupTertiaryButtonIcon,
   signUpPopupTertiaryButtonOnPress,
 }) => {
-  const { handleController } = useTemplateSignInController();
   return (
-
     <View style={styles(theme).container}>
       <View style={styles(theme).viewTop}>
         <Image style={styles(theme).imageLogo} source={logo} />
@@ -40,7 +38,7 @@ export const TemplateSignIn: React.FC<ModelOfTemplateSignIn> = ({
         </View>
       </View>
       <ScrollView keyboardShouldPersistTaps='handled'>
-        <Animated.View style={[styles(theme).viewBottom, handleController.moveViewUp.getLayout()]}>
+        <View style={styles(theme).viewBottom}>
           <Input
             theme={theme}
             IconSVG={IconMail}
@@ -81,7 +79,7 @@ export const TemplateSignIn: React.FC<ModelOfTemplateSignIn> = ({
               onPress={buttonCancelOnPress}
             />
           </View>
-        </Animated.View>
+        </View>
       </ScrollView>
       <SignUpPopup
         theme={theme}

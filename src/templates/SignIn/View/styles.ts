@@ -1,5 +1,5 @@
+import { ModelOfTheme } from "@soccerapp/theme";
 import { StyleSheet } from "react-native";
-import { ModelOfTheme } from "@src/theme";
 
 export const styles = (theme: ModelOfTheme) => {
   const { colors, metrics } = theme;
@@ -18,8 +18,8 @@ export const styles = (theme: ModelOfTheme) => {
       height: 800,
       padding: metrics.large,
       backgroundColor: colors.background,
-      borderTopStartRadius: metrics.radiusLargest,
-      borderTopEndRadius: metrics.radiusLargest
+      borderTopStartRadius: metrics.radiusLarge,
+      borderTopEndRadius: metrics.radiusLarge
     },
     viewButtons: {
       paddingTop: metrics.largest

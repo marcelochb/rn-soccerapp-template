@@ -39,8 +39,8 @@ export const useTemplateSignInController = () => {
 
     // cleanup function
     return () => {
-      Keyboard.removeListener("keyboardWillShow", moveViewUpByKeyboard);
-      Keyboard.removeListener("keyboardWillHide", moveViewUpStart);
+      Keyboard.removeAllListeners("keyboardWillShow");
+      Keyboard.removeAllListeners("keyboardWillHide");
     };
   }, []);
 
