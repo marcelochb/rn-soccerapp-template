@@ -9,7 +9,6 @@ export const styles = (theme: ModelOfTheme) => {
       backgroundColor: colors.elements,
     },
     viewTop: {
-      height: '10%',
       alignItems: 'center',
       flexDirection: 'row',
       padding: metrics.small,

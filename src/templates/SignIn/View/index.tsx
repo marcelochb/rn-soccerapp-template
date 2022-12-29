@@ -4,7 +4,7 @@ import { View, Image, ScrollView, Animated } from 'react-native';
 import { ModelOfTemplateSignIn } from '../Models';
 import { useTemplateSignInController } from '../Controller';
 
-import { Texts, Input, Buttons, Popups, SignUpPopup } from '@soccerapp/ui';
+import { Texts, Input, Buttons, Popups, SignUpPopup, PageWrapper } from '@soccerapp/ui';
 
 import { styles } from './styles';
 
@@ -29,14 +29,17 @@ export const TemplateSignIn: React.FC<ModelOfTemplateSignIn> = ({
   signUpPopupTertiaryButtonOnPress,
 }) => {
   return (
-    <View style={styles(theme).container}>
-      <View style={styles(theme).viewTop}>
-        <Image style={styles(theme).imageLogo} source={logo} />
-        <View style={styles(theme).viewTitle}>
-          <Texts.Title theme={theme} isTextElement>{title}</Texts.Title>
-          <Texts.Body theme={theme} isTextElement>{subTitle}</Texts.Body>
+    <PageWrapper theme={theme}
+      Header={
+        <View style={styles(theme).viewTop}>
+          <Image style={styles(theme).imageLogo} source={logo} />
+          <View style={styles(theme).viewTitle}>
+            <Texts.Title theme={theme} isTextElement>{title}</Texts.Title>
+            <Texts.Body theme={theme} isTextElement>{subTitle}</Texts.Body>
+          </View>
         </View>
-      </View>
+      }
+    >
       <ScrollView keyboardShouldPersistTaps='handled'>
         <View style={styles(theme).viewBottom}>
           <Input
@@ -76,20 +79,6 @@ export const TemplateSignIn: React.FC<ModelOfTemplateSignIn> = ({
           </View>
         </View>
       </ScrollView>
-      <SignUpPopup
-        theme={theme}
-        visible={signUpPopupVisible}
-        onDismiss={signUpPopupOnDismiss}
-        firstButtonLabel={signUpPopupFirstButtonLabel}
-        firstButtonIcon={signUpPopupFirstButtonIcon}
-        firstButtonOnPress={signUpPopupFirstButtonOnPress}
-        secondButtonLabel={signUpPopupSecondButtonLabel}
-        secondButtonIcon={signUpPopupSecondButtonIcon}
-        secondButtonOnPress={signUpPopupSecondButtonOnPress}
-        tertiaryButtonLabel={signUpPopupTertiaryButtonLabel}
-        tertiaryButtonIcon={signUpPopupTertiaryButtonIcon}
-        tertiaryButtonOnPress={signUpPopupTertiaryButtonOnPress}
-      />
       <Popups.Notification
         theme={theme}
         onHandler={notificationOnHandler}
@@ -97,7 +86,7 @@ export const TemplateSignIn: React.FC<ModelOfTemplateSignIn> = ({
         type={notificationType}
         visible={notificationVisible}
       />
-    </View >
+    </PageWrapper >
 
   );
 }
