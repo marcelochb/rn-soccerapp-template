@@ -16,7 +16,6 @@ export type ModelOfTemplateSignIn = {
   buttonSignInOnPress: (e?: any |  undefined) => void
   buttonSignInIsLoading?: boolean | undefined
   buttonSignUpOnPress: (e?: any |  undefined) => void
-  buttonCancelOnPress: ((() => void) & (() => void))
   signUpPopupVisible: boolean;
   signUpPopupOnDismiss: () => void;
   notificationOnHandler: () => void;

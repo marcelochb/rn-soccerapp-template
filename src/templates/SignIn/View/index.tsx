@@ -15,7 +15,7 @@ import IconMail from '@src/assetstemplate/Icons/iconMail.svg';
 export const TemplateSignIn: React.FC<ModelOfTemplateSignIn> = ({
   theme, logo, title, subTitle, emailValue, emailOnChangeText, passwordValue,
   passwordOnChangeText, passwordOnSubmitEditing, buttonSignInOnPress,
-  buttonSignInIsLoading, buttonSignUpOnPress, buttonCancelOnPress,
+  buttonSignInIsLoading, buttonSignUpOnPress,
   signUpPopupVisible, signUpPopupOnDismiss, notificationOnHandler,
   notificationText, notificationType, notificationVisible,
   signUpPopupFirstButtonLabel,
@@ -72,11 +72,6 @@ export const TemplateSignIn: React.FC<ModelOfTemplateSignIn> = ({
               label={'Ainda não tem conta? Registre-se.'}
               onPress={buttonSignUpOnPress}
               styleLabel={styles(theme).signUp}
-            />
-            <Buttons.Link theme={theme}
-              style={styles(theme).buttonLink}
-              label={'Agora não'}
-              onPress={buttonCancelOnPress}
             />
           </View>
         </View>
