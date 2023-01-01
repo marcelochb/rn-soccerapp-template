@@ -40,9 +40,11 @@ hideCreateButton,
           styleLabel={{
               fontSize: theme.fontSize.large,
               color: theme.colors.textElements,
+              // flex: 1
           }}
           style={{
               justifyContent: 'center',
+              // flex:1
             }}
           label={actionSheetLabel}
         />
