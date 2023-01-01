@@ -8,6 +8,7 @@ export type ModelOfTemplateMatchTabView<ItemT = any,SectionT = any> = {
   IconPlus: React.FC<React.SVGProps<SVGSVGElement>>; 
   navigateToView: (match: ItemT) => void;
   navigateToCreate: () => void;
+  hideCreateButton: boolean;
   teamName: string;
   teamCrest?: ImageSourcePropType | undefined;
   firstTabTitle: string;

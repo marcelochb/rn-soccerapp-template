@@ -18,13 +18,14 @@ secondTabTitle,
 secondSquadData,
 actionSheetOnPress,
 actionSheetLabel,
+hideCreateButton,
 }) => {
   const ref = useRef<any>();
   return (
     <PageWrapper theme={theme}
       loading={isLoading}
       ButtonFixed={
-        <Buttons.Fixed 
+        !hideCreateButton && <Buttons.Fixed 
           theme={theme}
           onPress={navigateToCreate}
           IconSVG={IconPlus}
