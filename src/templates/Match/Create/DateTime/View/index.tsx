@@ -78,11 +78,9 @@ export const TemplateMatchCreateDateTime
             label='Primeiro quadro'
             isChecked={firstSquadIsChecked}
             onClick={firstSquadOnClick}
-            isRadioButton
           />
           <CheckBox
             theme={theme}
-            isRadioButton
             label='Segundo quadro'
             style={styles(theme).marginLeft}
             isChecked={secondSquadIsChecked}
