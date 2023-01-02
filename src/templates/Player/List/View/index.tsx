@@ -17,7 +17,7 @@ const TemplatePlayerList: React.FC<ModelOfTemplatePlayerList> = ({
   forwardData,
 }) => {
   return (
-    <PageWrapper theme={theme} loading={isLoading} isScrollList>
+    <PageWrapper theme={theme} loading={isLoading}>
       <ScrollView>
       {coachingStaffData.length > 0 && <Texts.Title theme={theme} small>Comissão técnica</Texts.Title>}
       <List theme={theme}
