@@ -12,10 +12,10 @@ export const styles = (theme:ModelOfTheme) => StyleSheet.create({
   marginLeft: { marginLeft: theme.metrics.base },
   name: {
     color: theme.colors.textSecundary,
-    fontFamily: 'Roboto-LightItalic',
+    fontFamily: theme.fontFamily.italic,
   },
   line: {
-    borderBottomWidth: 0.5,
+    borderBottomWidth: theme.metrics.borderWidthBase,
     borderBottomColor: theme.colors.elementsSecundary,
     width: 30,
     marginVertical: theme.metrics.small,

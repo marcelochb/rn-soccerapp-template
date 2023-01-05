@@ -20,7 +20,7 @@ export const styles = (theme: ModelOfTheme) => StyleSheet.create({
     paddingTop: theme.metrics.small
   },
   viewUserTypeError: {
-    borderWidth: 1,
+    borderWidth: theme.metrics.borderWidthLarger,
     borderStyle: 'solid',
     borderColor: theme.colors.textHighlight
   },
