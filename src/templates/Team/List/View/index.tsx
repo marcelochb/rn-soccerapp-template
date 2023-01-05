@@ -18,6 +18,7 @@ export const TemplateTeamList: React.FC<ModelOfTemplateTeamList> = ({
       ButtonFixed={<Buttons.Fixed theme={theme} IconSVG={iconPlus} onPress={navigateToTeamCreate} />}
     >
       <List theme={theme}
+        style={{flex: 1}}
         data={data}
         item={({ item }) => <ListItemTeam theme={theme}
           name={item.name}
