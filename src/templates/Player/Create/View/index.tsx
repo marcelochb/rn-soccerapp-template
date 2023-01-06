@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { ModelOfTemplatePlayerCreate } from '../Models';
-import { PageWrapper, Input, Popups, Avatar, CheckBox, Texts, Buttons, PhotoPopup } from '@soccerapp/ui';
+import { PageWrapper, Input, Popups, Avatar, CheckBox, RadioButton, Texts, Buttons, PhotoPopup } from '@soccerapp/ui';
 import iconPersonOutline from '@src/assetstemplate/Icons/iconPersonOutline.svg';
 import iconAccountCircle from '@src/assetstemplate/Icons/iconAccountCircle.svg';
 import iconAssignment from '@src/assetstemplate/Icons/iconAssignment.svg';
@@ -136,21 +136,21 @@ export const TemplatePlayerCreate: React.FC<ModelOfTemplatePlayerCreate> = ({
       <Texts.Title theme={theme} small style={styles(theme).subTitlePosition}>Posição</Texts.Title>
       <View>
         <View style={styles(theme).viewLinePosition}>
-          <CheckBox isRadioButton label='GOL'
+          <RadioButton label='GOL'
             theme={theme}
             style={styles(theme).checkBoxPosition}
             isChecked={goalKeeperIsChecked}
             onClick={goalKeeperClick}
             disable={isViewOnly}
           />
-          <CheckBox isRadioButton label='LAT ESQ.'
+          <RadioButton label='LAT ESQ.'
             theme={theme}
             style={styles(theme).checkBoxPosition}
             isChecked={leftBackIsChecked}
             onClick={leftBackClick}
             disable={isViewOnly}
           />
-          <CheckBox isRadioButton label='LAT DIR.'
+          <RadioButton label='LAT DIR.'
             theme={theme}
             style={styles(theme).checkBoxPosition}
             isChecked={rightBackIsChecked}
@@ -159,21 +159,21 @@ export const TemplatePlayerCreate: React.FC<ModelOfTemplatePlayerCreate> = ({
           />
         </View>
         <View style={styles(theme).viewLinePosition}>
-          <CheckBox isRadioButton label='ZAG'
+          <RadioButton label='ZAG'
             theme={theme}
             style={styles(theme).checkBoxPosition}
             isChecked={centralBackIsChecked}
             onClick={centralBackClick}
             disable={isViewOnly}
           />
-          <CheckBox isRadioButton label='VOL'
+          <RadioButton label='VOL'
             theme={theme}
             style={styles(theme).checkBoxPosition}
             isChecked={midfielderDefensiveIsChecked}
             onClick={midfielderDefensiveClick}
             disable={isViewOnly}
           />
-          <CheckBox isRadioButton label='MEI'
+          <RadioButton label='MEI'
             theme={theme}
             style={styles(theme).checkBoxPosition}
             isChecked={midifielderAttackingIsChecked}
@@ -182,7 +182,7 @@ export const TemplatePlayerCreate: React.FC<ModelOfTemplatePlayerCreate> = ({
           />
         </View>
         <View style={styles(theme).viewLinePosition}>
-          <CheckBox isRadioButton label='ATA'
+          <RadioButton label='ATA'
             theme={theme}
             style={styles(theme).checkBoxPosition}
             isChecked={forwardIsChecked}
@@ -193,13 +193,13 @@ export const TemplatePlayerCreate: React.FC<ModelOfTemplatePlayerCreate> = ({
       </View>
       <Texts.Title theme={theme} small style={styles(theme).subTitlePosition}>Equipe</Texts.Title>
       <View style={styles(theme).viewLinePosition}>
-        <CheckBox isRadioButton label='Primeiro quadro'
+        <CheckBox label='Primeiro quadro'
           theme={theme}
           isChecked={firstSquadIsChecked}
           onClick={firstSquadClick}
           disable={isViewOnly}
         />
-        <CheckBox isRadioButton label='Segundo quadro'
+        <CheckBox label='Segundo quadro'
           theme={theme}
           isChecked={secondSquadIsChecked}
           onClick={secondSquadClick}
