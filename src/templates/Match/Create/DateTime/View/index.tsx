@@ -1,12 +1,18 @@
-import { Buttons, CheckBox, Input, PageWrapper, Texts } from '@soccerapp/ui';
+import { Buttons, RadioButton, Input, ListItemTeam, PageWrapper, Texts } from '@soccerapp/ui';
 import React from 'react';
-import { View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import { ModelOfTemplateMatchCreateDateTime } from '../Models';
 import { styles } from './styles';
 import { Avatar } from '@soccerapp/ui';
 import iconDate from '@src/assetstemplate/Icons/iconDate.svg';
 import iconHour from '@src/assetstemplate/Icons/iconHour.svg';
 import iconAddAlert from '@src/assetstemplate/Icons/iconAddAlert.svg';
+import iconRoad from '@src/assetstemplate/Icons/iconRoad.svg';
+import iconPlace from '@src/assetstemplate/Icons/iconPlace.svg';
+import iconHouse from '@src/assetstemplate/Icons/iconHouse.svg';
+import iconDirections from '@src/assetstemplate/Icons/iconDirections.svg';
+import iconDescription from '@src/assetstemplate/Icons/iconDescription.svg';
+import iconSoccerField from '@src/assetstemplate/Icons/iconSoccerField.svg';
 
 export const TemplateMatchCreateDateTime
   : React.FC<ModelOfTemplateMatchCreateDateTime> = ({
@@ -14,6 +20,7 @@ export const TemplateMatchCreateDateTime
     sourceCrest,
     teamName,
     teamResponsable,
+    teamPhone,
     dateValue,
     dateChangeText,
     dateError,
@@ -32,24 +39,62 @@ export const TemplateMatchCreateDateTime
     confirmAttendanceOnClick,
     notConfirmAttendanceIsChecked,
     notConfirmAttendanceOnClick,
+    soccerFieldNameValue,
+    soccerFieldNameChangeText,
+    soccerFieldNameError,
+    zipCodeValue,
+    zipCodeChangeText,
+    streetValue,
+    streetChangeText,
+    addressNumberValue,
+    addressNumberChangeText,
+    neighborhoodValue,
+    neighborhoodChangeText,
+    startAnimateInput,
+    complementValue,
+    complementChangeText,
+    cityValue,
+    cityChangeText,
+    ufValue,
+    ufChangeText,
+  
     onSubmit,
     onCancel,
   }) => {
     return (
       <PageWrapper theme={theme} isStatusBarLight isScrollForm>
-        <View style={styles(theme).viewRow}>
-          <View>
-            <Avatar theme={theme} source={sourceCrest} small />
-          </View>
-          <View style={styles(theme).padding}>
-            <Texts.Title theme={theme} small>{teamName}</Texts.Title>
-            <Texts.Body theme={theme} style={styles(theme).name}>{teamResponsable}</Texts.Body>
-          </View>
+        <ScrollView showsVerticalScrollIndicator={false}>
+        <Texts.Title theme={theme} >Oponente</Texts.Title>
+        <ListItemTeam theme={theme}
+          avatarSource={sourceCrest}
+          editOnPressed={onCancel}
+          labelEdit='Alterar'
+          isSelectable={false}
+          name={teamName}
+          phone={teamPhone}
+          responsable={teamResponsable}
+          selectOnPressed={() => {}}
+          style={styles(theme).viewFormGroupOpponent}
+        />
+        <Texts.Title theme={theme} style={[styles(theme).marginTop, styles(theme).marginBottom]}>Nosso time</Texts.Title>
+        <View style={styles(theme).viewFormGroupOurTeam}>
+          <RadioButton
+            theme={theme}
+            label='Primeiro quadro'
+            isChecked={firstSquadIsChecked}
+            onClick={firstSquadOnClick}
+          />
+          <RadioButton
+            theme={theme}
+            label='Segundo quadro'
+            style={styles(theme).marginLeft}
+            isChecked={secondSquadIsChecked}
+            onClick={secondSquadOnClick}
+          />
         </View>
-        <View style={[styles(theme).viewRow, styles(theme).marginBottom]}>
-          <View
-            style={styles(theme).input}
-          >
+        <Texts.Title theme={theme} >Quando?</Texts.Title>
+        <View style={[styles(theme).viewFormGroupWhen]}>
+          <View style={[styles(theme).input]}>
             <Input theme={theme} IconSVG={iconDate}
               label='Data'
               value={dateValue}
@@ -58,9 +103,7 @@ export const TemplateMatchCreateDateTime
               error={dateError}
             />
           </View>
-          <View
-            style={[styles(theme).input, styles(theme).marginLeft]}
-          >
+          <View style={[styles(theme).input, styles(theme).marginLeft]}>
             <Input theme={theme} IconSVG={iconHour}
               label='Hora'
               keyboardType='numeric'
@@ -71,25 +114,9 @@ export const TemplateMatchCreateDateTime
             />
           </View>
         </View>
-        <Texts.Title theme={theme} small style={styles(theme).marginTop}>Equipe</Texts.Title>
-        <View style={[styles(theme).viewRow]}>
-          <CheckBox
-            theme={theme}
-            label='Primeiro quadro'
-            isChecked={firstSquadIsChecked}
-            onClick={firstSquadOnClick}
-          />
-          <CheckBox
-            theme={theme}
-            label='Segundo quadro'
-            style={styles(theme).marginLeft}
-            isChecked={secondSquadIsChecked}
-            onClick={secondSquadOnClick}
-          />
-        </View>
-        <Texts.Title theme={theme} small style={styles(theme).marginTop}>Confirmar presença</Texts.Title>
+        <Texts.Title theme={theme} style={styles(theme).marginTop}>Confirmar presença?</Texts.Title>
         <View style={[confirmAttendanceError ?
-          styles(theme).attendanceError : {}]}>
+          styles(theme).attendanceError : {},styles(theme).viewFormGroupAttendance]}>
           <Input theme={theme} IconSVG={iconAddAlert}
             label='Dias antes'
             keyboardType='numeric'
@@ -99,13 +126,13 @@ export const TemplateMatchCreateDateTime
             onChangeText={confirmAttendanceDaysBeforeChangeText}
           />
           <View style={[styles(theme).viewRow, styles(theme).marginTop]}>
-            <CheckBox
+            <RadioButton
               theme={theme}
               label='Imediatamente'
               isChecked={confirmAttendanceIsChecked}
               onClick={confirmAttendanceOnClick}
             />
-            <CheckBox
+            <RadioButton
               theme={theme}
               label='Não confirmar'
               style={styles(theme).marginLeft}
@@ -116,10 +143,71 @@ export const TemplateMatchCreateDateTime
         </View>
         {confirmAttendanceError && (
           <Texts.Error theme={theme}>Escolha uma das opções</Texts.Error>
-        )}
+          )}
+          <Texts.Title theme={theme} style={styles(theme).marginTop}>Local do jogo</Texts.Title>
+        <View style={styles(theme).viewFormGroupOpponent}>
+        <Input theme={theme} IconSVG={iconSoccerField}
+        label='Nome do campo'
+        value={soccerFieldNameValue}
+        onChangeText={soccerFieldNameChangeText}
+        error={soccerFieldNameError}
+      />
+      <Input theme={theme} IconSVG={iconPlace}
+        style={styles(theme).marginTop}
+        label='CEP'
+        value={zipCodeValue}
+        maxLength={9}
+        onChangeText={zipCodeChangeText}
+        keyboardType='numeric'
+      />
+      <Input theme={theme} IconSVG={iconRoad}
+        style={styles(theme).marginTop}
+        label='Rua'
+        value={streetValue}
+        onChangeText={streetChangeText}
+        startAnimate={startAnimateInput}
+      />
+      <Input theme={theme} IconSVG={iconHouse}
+        style={styles(theme).marginTop}
+        label='Numero'
+        keyboardType='numeric'
+        value={addressNumberValue}
+        onChangeText={addressNumberChangeText}
+      />
+      <Input theme={theme} IconSVG={iconDirections}
+        style={styles(theme).marginTop}
+        label='Bairro'
+        value={neighborhoodValue}
+        onChangeText={neighborhoodChangeText}
+        startAnimate={startAnimateInput}
+      />
+      <Input theme={theme} IconSVG={iconDescription}
+        style={styles(theme).marginTop}
+        label='Complemento'
+        value={complementValue}
+        onChangeText={complementChangeText}
+      />
+      <View style={[styles(theme).viewRow, styles(theme).marginTop]}>
+        <Input theme={theme} IconSVG={iconDescription}
+          style={styles(theme).city}
+          label='Cidade'
+          value={cityValue}
+          onChangeText={cityChangeText}
+          startAnimate={startAnimateInput}
+        />
+        <Input theme={theme} IconSVG={iconDescription}
+          style={[styles(theme).zipCode, styles(theme).marginLeft]}
+          label='Estado'
+          value={ufValue}
+          onChangeText={ufChangeText}
+          startAnimate={startAnimateInput}
+        />
+      </View>          
+
+        </View>
         <Buttons.Base
           theme={theme}
-          label='Defenir local do jogo'
+          label='Salvar'
           style={{ marginTop: theme.metrics.large }}
           onPress={onSubmit}
         />
@@ -128,6 +216,8 @@ export const TemplateMatchCreateDateTime
           label='Agora não'
           onPress={onCancel}
         />
+        </ScrollView>
+
       </PageWrapper>
     );
   }

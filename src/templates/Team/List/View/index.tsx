@@ -22,6 +22,7 @@ export const TemplateTeamList: React.FC<ModelOfTemplateTeamList> = ({
         data={data}
         item={({ item }) => <ListItemTeam theme={theme}
           name={item.name}
+          labelEdit='Editar'
           responsable={item.responsable}
           phone={item.phone}
           avatarSource={item.crest}

@@ -7,6 +7,7 @@ export type ModelOfTemplateMatchCreateDateTime = {
   sourceCrest?: string | undefined;
   teamName: string;
   teamResponsable: string;
+  teamPhone: string;
   dateValue: string;
   dateChangeText: ((text: string) => void) | undefined;
   dateError: string | boolean | undefined;
@@ -25,7 +26,26 @@ export type ModelOfTemplateMatchCreateDateTime = {
   confirmAttendanceOnClick: () => void;
   notConfirmAttendanceIsChecked: boolean;
   notConfirmAttendanceOnClick: () => void;
-  onSubmit: (((event: GestureResponderEvent) => void) & ((e: GestureResponderEvent) => void)) | undefined;
+  soccerFieldNameValue: string;
+  soccerFieldNameChangeText: ((text: string) => void) | undefined;
+  soccerFieldNameError: string | boolean | undefined;
+  zipCodeValue: string;
+  zipCodeChangeText: ((text: string) => void) | undefined;
+  streetValue: string;
+  streetChangeText: ((text: string) => void) | undefined;
+  addressNumberValue: string;
+  addressNumberChangeText: ((text: string) => void) | undefined;
+  neighborhoodValue: string;
+  neighborhoodChangeText: ((text: string) => void) | undefined;
+  startAnimateInput: boolean;
+  complementValue: string;
+  complementChangeText: ((text: string) => void) | undefined;
+  cityValue: string;
+  cityChangeText: ((text: string) => void) | undefined;
+  ufValue: string;
+  ufChangeText: ((text: string) => void) | undefined;
+
+  onSubmit: (e?: any | undefined) => void;
   onCancel: ((() => void) & (() => void)) | undefined;
 }
 

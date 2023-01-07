@@ -17,5 +17,25 @@ export const styles = (theme: ModelOfTheme) => StyleSheet.create({
     borderWidth: theme.metrics.borderWidthLarger,
     borderStyle: 'solid',
     borderColor: theme.colors.error
-  }
+  },
+  viewFormGroupOpponent: {
+    marginLeft: theme.metrics.large,
+    marginBottom: theme.metrics.largest
+  },
+  viewFormGroupOurTeam: {
+    marginLeft: theme.metrics.large,
+    marginBottom: theme.metrics.largest,
+    flexDirection: 'row'
+  },
+  viewFormGroupWhen: {
+    marginLeft: theme.metrics.large,
+    marginBottom: theme.metrics.largest,
+    flexDirection: 'row'
+  },
+  viewFormGroupAttendance: {
+    marginLeft: theme.metrics.large,
+    marginBottom: theme.metrics.largest,
+  },
+  city: { flex: 3 },
+  zipCode: { flex: 1 },
 });
