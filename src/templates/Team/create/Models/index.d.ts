@@ -18,7 +18,7 @@ export type ModelOfTemplateTeamCreate = {
   noteChangeText: ((text: string) => void) | undefined;
   avatarOnPress: (() => void) | undefined;
   avatarSource: string | undefined;
-  onSubmit?: (((event: GestureResponderEvent) => void) & ((e: GestureResponderEvent) => void)) | undefined;
+  onSubmit: (e?: any | undefined) => void;
   isloadingSubmit?: boolean | undefined;
   onCancel?: ((() => void) & (() => void)) | undefined;
   photoPopupDismiss: () => void;

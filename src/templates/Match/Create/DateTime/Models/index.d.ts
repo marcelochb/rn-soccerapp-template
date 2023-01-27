@@ -44,9 +44,9 @@ export type ModelOfTemplateMatchCreateDateTime = {
   cityChangeText: ((text: string) => void) | undefined;
   ufValue: string;
   ufChangeText: ((text: string) => void) | undefined;
-
   onSubmit: (e?: any | undefined) => void;
   onCancel: ((() => void) & (() => void)) | undefined;
+  isLoading: boolean;
 }
 
 export class TemplateMatchCreateDateTime extends Component<ModelOfTemplateMatchCreateDateTime> {}

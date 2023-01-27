@@ -57,7 +57,7 @@ export const TemplateMatchCreateDateTime
     cityChangeText,
     ufValue,
     ufChangeText,
-  
+    isLoading,
     onSubmit,
     onCancel,
   }) => {
@@ -210,6 +210,7 @@ export const TemplateMatchCreateDateTime
           label='Salvar'
           style={{ marginTop: theme.metrics.large }}
           onPress={onSubmit}
+          isLoading={isLoading}
         />
         <Buttons.Link
           theme={theme}

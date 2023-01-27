@@ -28,7 +28,7 @@ export type ModelOfTemplateMatchCreateLocation = {
   cityChangeText: ((text: string) => void) | undefined;
   ufValue: string;
   ufChangeText: ((text: string) => void) | undefined;
-  onSubmit: (((event: GestureResponderEvent) => void) & ((e: GestureResponderEvent) => void)) | undefined;
+  onSubmit: (e?: any | undefined) => void;
   isLoading: boolean;
   onCancel: ((() => void) & (() => void)) | undefined;
 }
