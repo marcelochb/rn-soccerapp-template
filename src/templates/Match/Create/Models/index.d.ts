@@ -2,14 +2,30 @@ import { ModelOfTheme } from "@soccerapp/theme";
 import { Component } from "react";
 import { GestureResponderEvent } from "react-native";
 
-export type ModelOfTemplateMatchCreateLocation = {
+export type ModelOfTemplateMatchCreate = {
   theme: ModelOfTheme;
-  sourceCrest: string | undefined;
-  name: string;
-  responsable: string;
-  phone: string;
-  dateAndsquad: string;
-  confirmAttendance: string;
+  sourceCrest?: string | undefined;
+  teamName: string;
+  teamResponsable: string;
+  teamPhone: string;
+  dateValue: string;
+  dateChangeText: ((text: string) => void) | undefined;
+  dateError: string | boolean | undefined;
+  hourValue: string;
+  hourChangeText: ((text: string) => void) | undefined;
+  hourError: string | boolean | undefined;
+  firstSquadIsChecked: boolean;
+  firstSquadOnClick: () => void;
+  secondSquadIsChecked: boolean;
+  secondSquadOnClick: () => void;
+  confirmAttendanceError: boolean;
+  confirmAttendanceDaysBeforeValue: string;
+  confirmAttendanceDaysBeforeChangeText: ((text: string) => void) | undefined;
+  confirmAttendanceDaysBeforeError: string | boolean | undefined;
+  confirmAttendanceIsChecked: boolean;
+  confirmAttendanceOnClick: () => void;
+  notConfirmAttendanceIsChecked: boolean;
+  notConfirmAttendanceOnClick: () => void;
   soccerFieldNameValue: string;
   soccerFieldNameChangeText: ((text: string) => void) | undefined;
   soccerFieldNameError: string | boolean | undefined;
@@ -29,8 +45,8 @@ export type ModelOfTemplateMatchCreateLocation = {
   ufValue: string;
   ufChangeText: ((text: string) => void) | undefined;
   onSubmit: (e?: any | undefined) => void;
-  isLoading: boolean;
   onCancel: ((() => void) & (() => void)) | undefined;
+  isLoading: boolean;
 }
 
-export class TemplateMatchCreateLocation extends Component<ModelOfTemplateMatchCreateLocation> {}
+export class TemplateMatchCreate extends Component<ModelOfTemplateMatchCreate> {}

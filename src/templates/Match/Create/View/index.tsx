@@ -1,9 +1,8 @@
 import { Buttons, RadioButton, Input, ListItemTeam, PageWrapper, Texts } from '@soccerapp/ui';
 import React from 'react';
 import { ScrollView, View } from 'react-native';
-import { ModelOfTemplateMatchCreateDateTime } from '../Models';
+import { ModelOfTemplateMatchCreate } from '../Models';
 import { styles } from './styles';
-import { Avatar } from '@soccerapp/ui';
 import iconDate from '@src/assetstemplate/Icons/iconDate.svg';
 import iconHour from '@src/assetstemplate/Icons/iconHour.svg';
 import iconAddAlert from '@src/assetstemplate/Icons/iconAddAlert.svg';
@@ -14,8 +13,8 @@ import iconDirections from '@src/assetstemplate/Icons/iconDirections.svg';
 import iconDescription from '@src/assetstemplate/Icons/iconDescription.svg';
 import iconSoccerField from '@src/assetstemplate/Icons/iconSoccerField.svg';
 
-export const TemplateMatchCreateDateTime
-  : React.FC<ModelOfTemplateMatchCreateDateTime> = ({
+export const TemplateMatchCreate
+  : React.FC<ModelOfTemplateMatchCreate> = ({
     theme,
     sourceCrest,
     teamName,

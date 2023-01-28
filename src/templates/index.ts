@@ -1,8 +1,8 @@
 export {TemplateOnboard} from './Onboard/View';
 export {TemplateSignIn} from './SignIn/View';
 export {TemplateSignUp} from './SignUp/View';
-export {TemplateMatchCreateSuccess} from './Match/Create/Success/View';
-export {TemplateMatchCreateDateTime} from './Match/Create/DateTime/View';
+export {TemplateMatchCreateSuccess} from './Match/Success/View';
+export {TemplateMatchCreate} from './Match/Create/View';
 export {TemplateChangePassword} from './ChangePassword/View';
 export {TemplateNotificationDetail} from './Notification/Detail/View';
 export {TemplateNotificationList} from './Notification/List/View';
@@ -11,6 +11,5 @@ export {TemplatePlayerTabView} from './Player/Tabview/View';
 export {TemplatePlayerCreate} from './Player/Create/View';
 export {TemplateTeamCreate} from './Team/create/View';
 export {TemplateTeamList} from './Team/List/View';
-export {TemplateMatchCreateLocation} from './Match/Create/Location/View';
 export * from './Match/List/View';
 export {TemplateMatchTabView} from './Match/Tabview/View';
